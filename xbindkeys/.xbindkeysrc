@@ -1,0 +1,208 @@
+#lala
+"xbindkeys_show" 
+  control+shift + q
+
+# emulate left click 
+"xdotool click --delay 1000 --repeat 1 1"
+	alt+shift+z
+
+#Terminal + tmux
+"kitty tmux a "
+   control+Return 
+
+"kitty tmux"
+   alt+Return 
+
+#Emacs Client
+"emacsclient -c & bspc desktop -f 1"
+   alt+shift+e
+
+#ncmpcpp
+"~/Scripts/launchMusic.sh"
+   alt+shift+m
+
+#nvim
+"kitty --title nvim --class nvim -c ~/.config/kitty/vitty.conf tmux new-session -s Neovim -A  nvim & bspc desktop -f 1"
+   alt+shift+n
+
+#IDE
+"intellij-idea-ultimate-edition& bspc desktop -f 6"
+   alt+shift+s
+
+#PCmanFm
+"pcmanfm& bspc desktop -f 5"
+   alt+shift+a
+
+#Calibre
+"calibre& bspc desktop -f 5"
+   alt+shift+i
+
+#firefox
+"firefox & bspc desktop -f 3"
+   alt+shift+h
+
+#libreoffice
+"libreoffice & bspc desktop -f 5"
+   alt+shift+o
+
+
+#start retroarch
+"retroarch & bspc desktop -f 6"
+   alt + shift + w
+
+#Shutdown dmenu
+"bash ~/.config/polybar/hack/scripts/powermenu.sh"
+   control+XF86AudioMute
+
+"bash ~/.config/polybar/hack/scripts/powermenu.sh"
+   XF86PowerOff
+
+#Monitor dmenu
+"bash ~/Scripts/Screens"
+   control+alt+s
+
+# Mute volume
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+   XF86AudioMute
+
+# Play/Pause Playerctl(Firefox etc.) + mpd
+"playerctl play-pause & mpc toggle "
+	XF86AudioPlay
+
+# Play/Pause Playerctl(Firefox etc.) + mpd
+"playerctl play-pause & mpc toggle "
+	alt+p
+
+
+# Play/Pause Playerctl(Firefox etc.)
+"playerctl play-pause"
+	alt+shift+p
+
+# Play/Pause Playerctl(Firefox etc.)
+"playerctl play-pause"
+	shift + XF86AudioPlay
+
+# Play/Pause mpd
+"mpc toggle "
+	alt+control+p
+
+# Play/Pause mpd
+"mpc toggle "
+	shift+XF86AudioPlay
+
+# Play Audio
+#bash ~/Scripts/Cmus/PlayPause"
+#	Mod2+XF86AudioPlay
+
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+   control + XF86AudioRaiseVolume
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+   control + XF86AudioLowerVolume
+
+   
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+   control + Up
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+   control + Down
+
+# restart scc-daemon
+"scc-daemon stop && scc-daemon start"
+   alt + F1
+
+# Decrease volume
+""
+   XF86AudioLowerVolume
+
+"networkmanager_dmenu"
+   alt + F4
+## Increase volume
+#"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+#   Mod2 + KP_Subtract + XF86AudioRaiseVolume
+#
+## Decrease volume
+#"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+#   Mod2 + KP_Subtract  + XF86AudioLowerVolume
+
+
+#  Next Background
+"python ~/Scripts/Background/RandomBg.py randombg"
+	alt+XF86AudioNext
+
+#  Prev Background
+"python ~/Scripts/Background/RandomBg.py prevbg"
+	alt+XF86AudioPrev
+
+#  Prev Background
+"python ~/Scripts/Background/RandomBg.py delbg"
+	alt+XF86AudioPlay
+
+# Cmus Play Next 
+"bash ~/Scripts/Cmus/PlayNext"
+	XF86AudioNext
+
+# Cmus Play Prev
+"bash ~/Scripts/Cmus/PlayPrev"
+	XF86AudioPrev
+
+# Brightnis Up
+"sudo light -A 1"
+	XF86MonBrightnessUp
+  
+# Brightnis Up a little
+"sudo light -A .1"
+   alt + XF86MonBrightnessUp
+   
+
+# Brightnis Down
+"sudo light -U 1"
+	XF86MonBrightnessDown
+  
+# Brightnis Down a little
+"sudo light -U .1"
+	alt +XF86MonBrightnessDown
+
+
+"scrot -s ~/Pictures/superior.png"
+	alt+F2
+
+"scrot '%Y-%m-%d-%m-%s_$p.png' -u -e 'mv $f ~/Pictures/Screenshots/'"
+	F2
+
+
+
+#change KbLayout
+"setxkbmap -layout us && xmodmap ~/.Xmodmap"
+   control + XF86AudioNext
+
+"setxkbmap -layout dvp && xmodmap ~/.Xmodmap"
+   control + XF86AudioPrev
+
+
+"sh ~/Scripts/touchpad.sh"
+   space + control
+
+
+#"xterm -geom 50x20+20+20"
+#   Shift+Mod2+alt + s
+#
+## set directly keycode (here control+alt+mod2 + f with my keyboard)
+#"xterm"
+#  alt + c:0x29 + m:4 + mod2
+#
+## Control+Shift+a  release event starts rxvt
+#"rxvt"
+#  release+control+shift + a
+#
+## Control + mouse button 2 release event starts rxvt
+#"rxvt"
+#  Control + b:2 + Release
+
+##################################
+# End of xbindkeys configuration #
+##################################
