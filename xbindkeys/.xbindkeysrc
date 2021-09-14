@@ -13,6 +13,9 @@
 "kitty tmux"
    alt+Return 
 
+"kitty"
+   alt+shift+Return
+
 #Emacs Client
 "emacsclient -c & bspc desktop -f 1"
    alt+shift+e
@@ -155,7 +158,7 @@
 	XF86MonBrightnessUp
   
 # Brightnis Up a little
-"sudo light -A .1"
+"sudo light -A .2 "
    alt + XF86MonBrightnessUp
    
 
@@ -164,7 +167,7 @@
 	XF86MonBrightnessDown
   
 # Brightnis Down a little
-"sudo light -U .1"
+"sudo light -U .2"
 	alt +XF86MonBrightnessDown
 
 
