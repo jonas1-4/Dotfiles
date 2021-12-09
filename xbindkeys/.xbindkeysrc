@@ -2,8 +2,14 @@
 "xbindkeys_show" 
   control+shift + q
 
+#keymap
+"setxkbmap -layout us && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
+   alt+F12
+
+"xmodmap ~/.config/xkb/Xmodmap"
+   shift+F12
 # emulate left click 
-"xdotool click --delay 1000 --repeat 1 1"
+"xdotool click --delay 5 --repeat 1 1"
 	alt+shift+z
 
 #Terminal + tmux
@@ -13,9 +19,16 @@
 "kitty tmux"
    alt+Return 
 
+"kitty"
+   alt+shift+Return
+
 #Emacs Client
-"emacsclient -c & bspc desktop -f 1"
-   alt+shift+e
+"emacs -c"
+   alt+shift+t
+
+#Emacs Client
+"emacs"
+   alt+control+t
 
 #ncmpcpp
 "~/Scripts/launchMusic.sh"
@@ -30,8 +43,8 @@
    alt+shift+s
 
 #PCmanFm
-"pcmanfm& bspc desktop -f 5"
-   alt+shift+a
+"nautilus& bspc desktop -f 5"
+   alt + shift + a
 
 #Calibre
 "calibre& bspc desktop -f 5"
@@ -52,7 +65,7 @@
 
 #Shutdown dmenu
 "bash ~/.config/polybar/hack/scripts/powermenu.sh"
-   control+XF86AudioMute
+   alt + shift + XF86AudioMute
 
 "bash ~/.config/polybar/hack/scripts/powermenu.sh"
    XF86PowerOff
@@ -155,7 +168,7 @@
 	XF86MonBrightnessUp
   
 # Brightnis Up a little
-"sudo light -A .1"
+"sudo light -A .2 "
    alt + XF86MonBrightnessUp
    
 
@@ -164,7 +177,7 @@
 	XF86MonBrightnessDown
   
 # Brightnis Down a little
-"sudo light -U .1"
+"sudo light -U .2"
 	alt +XF86MonBrightnessDown
 
 

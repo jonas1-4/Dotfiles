@@ -8,7 +8,7 @@ super + @space
   bash ~/.config/polybar/hack/scripts/launcher.sh
 
 # program launcher  
-shift + @space
+alt + @space
   bash ~/.config/polybar/hack/scripts/window-switcher.sh
 
 
@@ -52,7 +52,6 @@ super + {t,shift + t,s,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
 # focus/swap
 #
 
@@ -87,7 +86,7 @@ super + {1-9,0}
 	bspc node -d '^{1-9,10}'
 
 super + {_,alt + }{plus, bracketleft, braceleft, parenleft, ampersand, equal, parenright, braceright, bracketright, asterisk}
-	bspc {desktop -f,node -d} {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect

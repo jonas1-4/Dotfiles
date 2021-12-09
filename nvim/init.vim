@@ -85,12 +85,15 @@ Plug 'ThePrimeagen/harpoon'
 ""Plug 'akinsho/flutter-tools.nvim'
 
 "Lsp
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovim/nvim-lspconfig'
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-flutter']
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'sheerun/vim-polyglot'
+
+"Autocompletion"
+Plug 'hrsh7th/vim-vsnip'
+Plug 'L3MON4D3/LuaSnip' 
+Plug 'nvim-lua/completion-nvim'
 
 "Git
 Plug 'airblade/vim-gitgutter'
@@ -123,6 +126,7 @@ function! NgCreateComponent(kind)
   cal inputrestore()
   execute ':!ng generate '.a:kind.' '.name
 endfunction
+
 
 nnoremap <leader>ccc :call NgCreateComponent('component')<CR>
 nnoremap <leader>ccs :call NgCreateComponent('service')<CR>
@@ -183,3 +187,17 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 
 ""let g:airline#extensions#hunks#enabled=0
+
+if (!exists('*SourceConfig'))
+  function SourceConfig() abort
+    " Your path will probably be different
+    for f in split(glob('~/.config/nvim/plugin/*'), '\n')
+      exe 'source' f
+    endfor
+
+    source $MYVIMRC
+  endfunction
+endif
+
+nnoremap <silent> <Leader>r :call SourceConfig()<cr>
+
