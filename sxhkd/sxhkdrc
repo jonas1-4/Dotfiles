@@ -8,7 +8,7 @@ super + @space
   bash ~/.config/polybar/hack/scripts/launcher.sh
 
 # program launcher  
-shift + @space
+alt + @space
   bash ~/.config/polybar/hack/scripts/window-switcher.sh
 
 
@@ -52,7 +52,6 @@ super + {t,shift + t,s,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
 # focus/swap
 #
 

@@ -22,7 +22,8 @@ bindkey -v
 export ANDROID_HOME="/home/jonas/bin/Android/"
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
 export PATH="$PATH:/home/jonas/bin/flutter/bin"
-export PATH="$PATH:/home/jonas/.emacs.d/bin/"
+export PATH="$PATH:/home/jonas/Git-Programs/flutter/bin"
+export PATH="$PATH:/home/jonas/doom-emacs/bin"
 export PATH="$PATH:/home/jonas/bin/Android/tools/bin/"
 export PATH="$PATH:/home/jonas/bin/node/bin"
 export PATH="$PATH:/home/jonas/go/bin"
@@ -31,6 +32,12 @@ export PATH="$PATH:/home/jonas/Git-Programs/keg/bin"
 export PATH="$PATH:/home/jonas/neovim/bin/"
 export PATH="$PATH:/home/jonas/Scripts/autostartprograms"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"/home/jonas/.local/share/gem/ruby/3.0.0/bin"
+export GAMEMODERUNEXEC="env __NV_PRIME_RENDER_OFFLOAD=1 env __GLX_VENDOR_LIBRARY_NAME=nvidia env __VK_LAYER_NV_optimus=NVIDIA_only"
+
+#for waifu2x
+export CUDAToolkit_ROOT=/opt/cuda/
+export PATH=$PATH:/opt/cuda/bin
 
 export LD_LIBRARY_PATH=/usr/local/lib
 
@@ -93,8 +100,8 @@ mpdf () {
 alias kilo(){cd ~/Developing/C/kilo/ && make && ./kilo $1}
 
 alias gitmerge(){
-branch=$(git rev-parse --abbrev-ref HEAD)
-git checkout master && git merge $branch && git push && git checkout $branch}
-alias gitcommit(){
-git add . && git commit . -m "$1"
+	branch=$(git rev-parse --abbrev-ref HEAD)
+	git checkout master && git merge $branch && git push && git checkout $branch}
+	alias gitcommit(){
+	git add . && git commit . -m "$1"
 }

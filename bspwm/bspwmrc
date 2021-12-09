@@ -2,13 +2,14 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 
-my_laptop_external_monitor=$(xrandr --query | grep 'HDMI1')
+my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-1')
 if [[ $my_laptop_external_monitor = *disconnected* ]]; then
-    bspc monitor eDP1 -d 1 2 4 6 7 8 9 0
+    bspc monitor eDP-1 -d 1 2 4 6 7 8 9 0
 else
     #bspc monitor eDP1 -d 7 8 9 0
     
-    bspc monitor HDMI1 -d 1 2 3 4 5 6 7 8 9 0   
+    bspc monitor eDP-1 -d  0
+    bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9
 
 fi
 
@@ -33,14 +34,14 @@ bspc config gapless_monocle      true
 
 
 bspc rule -a Gimp desktop='^8' follow=on
-bspc rule -a Chromium desktop='^2'
+bspc rule -a Chromium desktop='^0'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a discord desktop='8' follow=off focus=off
 bspc rule -a Thunderbird desktop='8' focus=off follow=off
 bspc rule -a freezer desktop='7' focus=off follow=off
-bspc rule -a nvim desktop='1' focus=off follow=off
+bspc rule -a nvim desktop='1' focus=off follow=off state=fullscreen
 bspc rule -a Blueman-manager desktop='9' focus=off follow=off
 bspc rule -a Pavucontrol desktop='9' focus=off follow=off
 bspc rule -a update desktop='9' focus=off follow=off
@@ -49,6 +50,11 @@ bspc rule -a retroarch desktop='6' focus=off follow=off
 bspc rule -a firefox:Toolkit state=floating
 bspc rule -a "VirtualBox Manager" desktop='9' follow=on
 bspc rule -a "VirtualBox Machine" desktop='0' follow=on 
+bspc rule -a Emacs desktop='1' state=fullscreen follow=on
+bspc rule -a emacs desktop='1' state=fullscreen follow=on
+bspc rule -a Steam desktop='6' follow=on
+bspc rule -a "Enigmatica 2: Expert" desktop='6' state=fullscreen follow=on
+bspc rule -a "multimc" desktop='6'  follow=on
 
 
 
@@ -72,11 +78,11 @@ sh ~/Scripts/autostartprograms/internet.sh &
 # done
 
 #~/Scripts/monitorBspwm
-emacs --daemon &
 deadd-notification-center &
 unclutter &
 pavucontrol &
 blueman &
+emacsclient &
 
 
 
