@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Fira Code 10";
+	font:							"Fira Code Mono 10";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";

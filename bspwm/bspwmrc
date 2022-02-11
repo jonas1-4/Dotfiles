@@ -2,14 +2,16 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 
-my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-1')
+laptop= ${private/development/scripts/monitors/laptop.sh}
+external= ${private/development/scripts/monitors/laptop.sh}
+my_laptop_external_monitor=$(xrandr --query | grep $external)
 if [[ $my_laptop_external_monitor = *disconnected* ]]; then
-    bspc monitor eDP-1 -d 1 2 4 6 7 8 9 0
+    bspc monitor $laptop -d 1 2 4 6 7 8 9 0
 else
     #bspc monitor eDP1 -d 7 8 9 0
     
-    bspc monitor eDP-1 -d  0
-    bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9
+    bspc monitor $laptop -d  0
+    bspc monitor $external -d 1 2 3 4 5 6 7 8 9
 
 fi
 
@@ -33,6 +35,7 @@ bspc config gapless_monocle      true
 #bspc config top_monocle_padding  -34
 
 
+bspc config external_rules_command "$HOME/private/development/scripts/bspwm/spotify.sh"
 bspc rule -a Gimp desktop='^8' follow=on
 bspc rule -a Chromium desktop='^0'
 bspc rule -a mplayer2 state=floating
@@ -53,6 +56,8 @@ bspc rule -a "VirtualBox Machine" desktop='0' follow=on
 bspc rule -a Emacs desktop='1' state=fullscreen follow=on
 bspc rule -a emacs desktop='1' state=fullscreen follow=on
 bspc rule -a Steam desktop='6' follow=on
+bspc rule -a "heroic" desktop='6' follow=on
+bspc rule -a "Heroic" desktop='6' follow=on
 bspc rule -a "Enigmatica 2: Expert" desktop='6' state=fullscreen follow=on
 bspc rule -a "multimc" desktop='6'  follow=on
 
@@ -82,8 +87,7 @@ deadd-notification-center &
 unclutter &
 pavucontrol &
 blueman &
-emacsclient &
-
+kitty tmux -u & 
 
 
 xmodmap ~/.config/xkb/Xmodmap &

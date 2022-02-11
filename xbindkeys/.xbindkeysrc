@@ -13,21 +13,19 @@
 	alt+shift+z
 
 #Terminal + tmux
-"kitty tmux a "
+"kitty tmux -u a"
    control+Return 
-
-"kitty tmux"
-   alt+Return 
 
 "kitty"
    alt+shift+Return
 
 #Emacs Client
-"emacs -c"
+"emacsclient -c"
    alt+shift+t
 
-#Emacs Client
-"emacs"
+
+#Restart Emacs
+"systemctl restart --user emacs"
    alt+control+t
 
 #ncmpcpp
@@ -35,7 +33,7 @@
    alt+shift+m
 
 #nvim
-"kitty --title nvim --class nvim -c ~/.config/kitty/vitty.conf tmux new-session -s Neovim -A  nvim & bspc desktop -f 1"
+"kitty --title nvim --class nvim -c ~/.config/kitty/vitty.conf tmux -u new-session -s Neovim -A  nvim & bspc desktop -f 1"
    alt+shift+n
 
 #IDE
@@ -43,7 +41,7 @@
    alt+shift+s
 
 #PCmanFm
-"nautilus& bspc desktop -f 5"
+"thunar& bspc desktop -f 5"
    alt + shift + a
 
 #Calibre
@@ -83,7 +81,7 @@
 	XF86AudioPlay
 
 # Play/Pause Playerctl(Firefox etc.) + mpd
-"playerctl play-pause & mpc toggle "
+"playerctl  --player=spotify play-pause & mpc toggle "
 	alt+p
 
 
@@ -117,6 +115,14 @@
 
    
 # Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +1%"
+   control + alt + Up
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -1%"
+   control + alt + Down
+
+# Increase volume
 "pactl set-sink-volume @DEFAULT_SINK@ +5%"
    control + Up
 
@@ -135,12 +141,12 @@
 "networkmanager_dmenu"
    alt + F4
 ## Increase volume
-#"pactl set-sink-volume @DEFAULT_SINK@ +5%"
-#   Mod2 + KP_Subtract + XF86AudioRaiseVolume
+"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+   Mod2 + KP_Subtract + XF86AudioRaiseVolume
 #
 ## Decrease volume
-#"pactl set-sink-volume @DEFAULT_SINK@ -5%"
-#   Mod2 + KP_Subtract  + XF86AudioLowerVolume
+"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+   Mod2 + KP_Subtract  + XF86AudioLowerVolume
 
 
 #  Next Background
@@ -180,11 +186,13 @@
 "sudo light -U .2"
 	alt +XF86MonBrightnessDown
 
+"xclip -o"
+   alt+shift+l
 
-"scrot -s ~/Pictures/superior.png"
+"scrot -s ~/foo.png && xclip ~/foo.png && rm ~/foo.png"
 	alt+F2
 
-"scrot '%Y-%m-%d-%m-%s_$p.png' -u -e 'mv $f ~/Pictures/Screenshots/'"
+"scrot '%Y-%m-%d-%m-%s_$p.png' -u -e 'mv $f ~/private/pictures/Screenshots/'"
 	F2
 
 
@@ -197,7 +205,7 @@
    control + XF86AudioPrev
 
 
-"sh ~/Scripts/touchpad.sh"
+"sh ~/private/development/scripts/touchpad.sh"
    space + control
 
 

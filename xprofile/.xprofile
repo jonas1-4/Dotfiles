@@ -1,0 +1,6 @@
+#!/bin/sh
+export LAPTOPSCREEN=$(/home/jonas/private/development/scripts/monitors/laptop.sh)
+export EXTERNALSCREEN=$(/home/jonas/private/development/scripts/monitors/external.sh)
+python ~/private/development/scripts/Background/RandomBg.py currbg
+xmodmap .config/xkb/Xmodmap &
+xbindkeys -p&
