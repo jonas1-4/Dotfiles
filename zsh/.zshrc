@@ -43,9 +43,8 @@ export PATH="$PATH:$GEM_HOME/bin"
 export GAMEMODERUNEXEC="env __NV_PRIME_RENDER_OFFLOAD=1 env __GLX_VENDOR_LIBRARY_NAME=nvidia env __VK_LAYER_NV_optimus=NVIDIA_only"
 
 #emacs
-export DOOMDIR="/home/jonas/private/dotfiles/.doom.d"
+export DOOMDIR="/home/jonas/private/dotfiles/doom"
 export PATH="$PATH:/home/jonas/.config/emacs.d/doom.emacs.d/bin"
-mkdir -p "$DOOMDIR"
 
 #for intellij
 export _JAVA_AWT_WM_NONREPARENTING=1

@@ -112,7 +112,7 @@ call plug#end()
 
 
 syntax on
-colorscheme onedark
+colorscheme gruvbox
 
 
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR> 
