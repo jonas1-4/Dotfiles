@@ -1,6 +1,8 @@
 (setq user-full-name "Jonas Ackermann"
       user-mail-address "jonas1.4@gmx.de")
 
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
 (setq doom-theme 'doom-gruvbox)
 
 (setq fancy-splash-image (concat doom-private-dir "splash.png"))

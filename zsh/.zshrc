@@ -93,7 +93,7 @@ alias MS="sudo mount /dev/sdb1 /Games/ && cd /Games/MinecraftServer/ && sudo jav
 
 alias sndmon="xrandr --output eDP-1-1 --right-of HDMI-1-1 && xrandr --output HDMI-1-1 --primary && xrandr --output HDMI-1-1 --auto && xrandr --output eDP-1-1 --auto && feh --bg-scale ~/Pictures/ArchLinuxBackground.png"
 
-alias em="emulator -avd Pixel3 & emulator -avd Pixel2" 
+alias em="emulator -avd em" 
 
 alias v="nvim" 
 

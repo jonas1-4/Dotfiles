@@ -20,9 +20,16 @@
    alt+shift+Return
 
 #Emacs Client
-"emacsclient -c"
+"emacsclient -c -s doom"
    alt+shift+t
 
+#Emacs Client
+"emacsclient -c -s own"
+   alt+shift+o
+
+#Restart Emacs
+"systemctl restart --user emacs_own"
+   alt+control+o
 
 #Restart Emacs
 "systemctl restart --user emacs"
@@ -53,8 +60,8 @@
    alt+shift+h
 
 #libreoffice
-"libreoffice & bspc desktop -f 5"
-   alt+shift+o
+#"libreoffice & bspc desktop -f 5"
+#   alt+shift+o
 
 
 #start retroarch
