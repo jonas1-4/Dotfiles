@@ -6,11 +6,14 @@
 ;(package! yasnippet)
 ;(package! centered-cursor-mode)
 (package! fira-code-mode)
+(package! csv-mode)
+(package! org-clock-today)
+(package! org-auto-tangle)
 ;(package! treemacs-persp)
 
 
-;(package! example
-;  :recipe (:host github :repo "amno1/org-babel-hide-markers-mode"))
+(package! centered-cursor-mode
+  :recipe (:host github :repo "andre-r/centered-cursor-mode.el"))
 ;
 ;(unpin! hover)
 ;(unpin! treemacs)

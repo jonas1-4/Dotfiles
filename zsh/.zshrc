@@ -25,11 +25,11 @@ bindkey -v
 
 #cat ~/.cache/wal/sequences 
 
-export ANDROID_HOME="/home/jonas/bin/Android/"
+export ANDROID_HOME="/home/jonas/android-sdk"
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
 export PATH="$PATH:/home/jonas/bin/flutter/bin"
 export PATH="$PATH:/home/jonas/private/development/flutter/flutter/bin"
-export PATH="$PATH:/home/jonas/bin/Android/tools/bin/"
+export PATH="$PATH:/home/jonas/android-sdk/tools/bin/"
 export PATH="$PATH:/home/jonas/bin/node/bin"
 export PATH="$PATH:/home/jonas/go/bin"
 export PATH="$PATH:/home/jonas/Scripts/"
@@ -64,7 +64,7 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk/"
 
 export IDE=intellij-idea-ultimate-edition
 export BROWSER=firefox
-export EDITOR=nvim
+export EDITOR=emacs
 export TerminalEmulator=kitty
 export CHROME_EXECUTABLE=/usr/bin/chromium
 export LAPTOPSCREEN=$(/home/jonas/private/development/scripts/monitors/laptop.sh)
@@ -75,6 +75,7 @@ autoload -Uz compinit && compinit
 
 #aliases 
 alias e="emacsclient -c"
+alias ls="lsd"
 alias mb1="sudo mount /dev/sdb1 /mnt"
 alias mountExt="sudo mount /dev/sdb1 /extMount"
 alias mb2="sudo mount /dev/sdb2 /mnt"
@@ -83,6 +84,7 @@ alias mc2="sudo mount /dev/sdc2 /mnt"
 alias tmux="tmux -u"
 alias dwarf="python ~/private/games/LinuxDwarfPack/launch.py"
 alias s='sudo $(fc -ln -1) && echo "you got sudod"'
+alias hearthstone='emulator -avd Pixel_4_API_31 &> /dev/null &'
 
 
 alias pbcopy='xsel --clipboard --input'

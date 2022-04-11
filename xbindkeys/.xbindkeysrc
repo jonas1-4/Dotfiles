@@ -2,6 +2,10 @@
 "xbindkeys_show" 
   control+shift + q
 
+#rofi-pass
+"rofi-pass"
+  control+F3
+
 #keymap
 "setxkbmap -layout us && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
    alt+F12
@@ -28,11 +32,11 @@
    alt+shift+o
 
 #Restart Emacs
-"systemctl restart --user emacs_own"
+"systemctl restart --user emacs_own && emacsclient -c -s own"
    alt+control+o
 
 #Restart Emacs
-"systemctl restart --user emacs"
+"systemctl restart --user emacs && emacsclient -c -s doom"
    alt+control+t
 
 #ncmpcpp

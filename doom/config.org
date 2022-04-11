@@ -1,4 +1,5 @@
 #+TITLE: Config
+#+auto_tangle: t
 
 * Simple settings
 
@@ -25,6 +26,9 @@ Set the Splash Image and remove unneeded items
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 #+end_src
 
+#+begin_src emacs-lisp :tangle ./config.el
+(global-centered-cursor-mode)
+#+end_src
 Linenumbers
 
 #+begin_src emacs-lisp :tangle ./config.el
@@ -34,9 +38,9 @@ Linenumbers
 ** Font
 
 #+begin_src emacs-lisp :tangle ./config.el
-(setq doom-font (font-spec :family "Roboto Mono" :size 16))
-
+(setq doom-font (font-spec :family "Roboto Mono" :size 24))
 #+end_src
+
 
 (use-package! fira-code-mode
   :hook prog-mode
@@ -64,6 +68,11 @@ Linenumbers
 #+RESULTS:
 | my-compilation-hook |
 
+** Nice to have
+
+#+begin_src emacs-lisp :tangle ./config.el
+(setq auto-save-default t)
+#+end_src
 
 * Org
 
@@ -135,6 +144,7 @@ Wrap lines to Windowsize
 	    (lambda ()
 	      (add-hook 'after-save-hook #'org-babel-tangle-config)))
 #+end_src
+
 **** Custom Faces
 
              (page-break-lines-mode 1)
@@ -186,17 +196,16 @@ Wrap lines to Windowsize
 (setq org-pomodoro-length 25)
 #+end_src
 
-*** Remove done entries
+
+** Agenda
+
+*** Show Tasktime of today in Modeline
 
 #+begin_src emacs-lisp :tangle ./config.el
-(defun channing/archive-when-done ()
-  "Archive current entry if it is marked as DONE (see `org-done-keywords')."
-  (when (org-entry-is-done-p)
-    (org-archive-subtree-default)))
+;;(setq org-clock-today-mode 1)
 #+end_src
 
 
-** Agenda
 
 #+begin_src emacs-lisp :tangle ./config.el
 (with-eval-after-load 'org-superstar
@@ -301,8 +310,8 @@ Wrap lines to Windowsize
           ("CANCELLED" . "")
           ("#+begin_quote" . "“")
           ("#+end_quote" . "”")))
-  (prettify-symbols-mode +1)
-  (org-superstar-mode +1)
+  ;;(prettify-symbols-mode +1)
+  ;;(org-superstar-mode +1)
   )
 
 (setq org-agenda-skip-scheduled-if-done t
@@ -400,13 +409,25 @@ Wrap lines to Windowsize
 
 
 
+(defun switch-to-flutter()
+  (interactive)
+  (when-let ((buf (get-buffer "*Flutter*")))
+    (switch-to-buffer buf)))
+
+
 (use-package! lsp-dart)
-(map! :after lsp-dart
+(map! :after dart-mode
+      :map dart-mode-map
       :leader
-      :n "c c" #'flutter-run-or-hot-reload)
+      :nv "c c" #'flutter-run-or-hot-reload
+      :nv "c C" #'flutter-hot-restart
+      :nv "c h" #'switch-to-flutter)
 (setq lsp-dart-flutter-sdk-dir "/home/jonas/private/development/flutter/flutter/")
 (setq lsp-dart-sdk-dir "/home/jonas/private/development/flutter/flutter/bin/cache/dart-sdk/")
 #+end_src
+
+#+RESULTS:
+: /home/jonas/private/development/flutter/flutter/bin/cache/dart-sdk/
 
 *** Evil
 
@@ -447,9 +468,13 @@ Reenabling standart s vim key
 (setq doom-modeline-major-mode-color-icon t)
 ;;  (setq doom-modeline-buffer-state-icon t)
 (setq doom-modeline-buffer-modification-icon nil)
-(setq doom-modeline-buffer-file-name-style 'relative-from-project)
-;;  (setq doom-modeline-minor-modes nil)
+(setq doom-modeline-buffer-file-name-style 'default)
+(setq doom-modeline-minor-modes nil)
 (setq doom-modeline-enable-word-count nil)
+(setq line-number-mode nil)
+(setq column-number-mode nil)
+(setq lsp-modeline-code-actions-enable nil)
+(setq timeclock-mode-line-display nil)
 (setq doom-modeline-buffer-encoding nil)
 (setq doom-modeline-indent-info nil)
 ;;  (setq doom-modeline-checker-simple-format t)
@@ -502,10 +527,10 @@ Reenabling standart s vim key
         (when (or treemacs-follow-after-init treemacs-follow-mode)
           (treemacs--follow))))))
 
-(setq which-key-idle-delay 0.5)
+(setq which-key-idle-delay 1)
 
 (after! company
-  (setq company-idle-delay 0.5
+  (setq company-idle-delay 0
         company-minimum-prefix-length 2)
   (setq company-show-numbers t)
   (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
@@ -517,3 +542,4 @@ Reenabling standart s vim key
 (setq-default prescient-history-length 1000)
 
 #+end_src
+

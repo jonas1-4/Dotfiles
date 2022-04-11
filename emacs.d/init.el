@@ -1,5 +1,4 @@
 ;;Looks
-(load-theme 'gruvbox t)
 (add-to-list 'default-frame-alist '(font . "Fira Code Retina 13"))
 
 (setq inhibit-startup-message t)
@@ -37,6 +36,25 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package all-the-icons)
+
+(use-package doom-themes
+  :config
+  (setq doom-themes-enable-bold t
+	doom-themes-enable-italic t)
+  (load-theme 'doom-gruvbox t)
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
+
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
+
 (use-package evil
   :config
   (evil-mode 1))
@@ -59,10 +77,6 @@
   :config
   (ivy-mode 1))
 
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
@@ -79,7 +93,7 @@
 
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
-	 ([remap 
+	 ([remap upcase-word] . counsel-M-x)
 	  ("C-x b" . counsel-ibuffer)
 	  ("C-x C-f" . counsel-find-file)
 	 :map minibuffer-local-map
@@ -98,3 +112,18 @@
   ([remap describe-key] . helpful-key))
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("8146edab0de2007a99a2361041015331af706e7907de9d6a330a3493a541e5a6" default))
+ '(package-selected-packages
+   '(dashboard which-key use-package rainbow-delimiters projectile lsp-ui lsp-dart ivy-rich helpful gruvbox-theme flycheck evil doom-themes doom-modeline counsel company)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

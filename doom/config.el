@@ -1,17 +1,17 @@
 (setq user-full-name "Jonas Ackermann"
       user-mail-address "jonas1.4@gmx.de")
 
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
 (setq doom-theme 'doom-gruvbox)
 
 (setq fancy-splash-image (concat doom-private-dir "splash.png"))
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 
+(global-centered-cursor-mode)
+
 (setq display-line-numbers-type 'relative)
 
-(setq doom-font (font-spec :family "Roboto Mono" :size 16))
+(setq doom-font (font-spec :family "Roboto Mono" :size 24))
 
 (defun my-compilation-hook ()
   (when (not (get-buffer-window "*compilation*"))
@@ -24,6 +24,8 @@
           (shrink-window (- h 10)))))))
 
 (add-hook 'compilation-mode-hook 'my-compilation-hook)
+
+(setq auto-save-default t)
 
 (setq org-directory "/home/jonas/private/documents/org/")
 
@@ -89,10 +91,7 @@
 (setq org-pomodoro-keep-killed-pomodoro-time t)
 (setq org-pomodoro-length 25)
 
-(defun channing/archive-when-done ()
-  "Archive current entry if it is marked as DONE (see `org-done-keywords')."
-  (when (org-entry-is-done-p)
-    (org-archive-subtree-default)))
+;;(setq org-clock-today-mode 1)
 
 (with-eval-after-load 'org-superstar
   (setq org-superstar-item-bullet-alist
@@ -196,8 +195,8 @@
           ("CANCELLED" . "")
           ("#+begin_quote" . "“")
           ("#+end_quote" . "”")))
-  (prettify-symbols-mode +1)
-  (org-superstar-mode +1)
+  ;;(prettify-symbols-mode +1)
+  ;;(org-superstar-mode +1)
   )
 
 (setq org-agenda-skip-scheduled-if-done t
@@ -255,6 +254,7 @@
 (after! elfeed
   (setq elfeed-search-filter "@2-month-ago +unread"))
 (setq rmh-elfeed-org-files '("~/private/documents/org/elfeed.org"))
+(add-hook! 'elfeed-search-mode-hook 'elfeed-update)
 
 (use-package! lsp-mode
   :commands lsp
@@ -279,10 +279,19 @@
 
 
 
+(defun switch-to-flutter()
+  (interactive)
+  (when-let ((buf (get-buffer "*Flutter*")))
+    (switch-to-buffer buf)))
+
+
 (use-package! lsp-dart)
-(map! :after lsp-dart
+(map! :after dart-mode
+      :map dart-mode-map
       :leader
-      :n "c c" #'flutter-run-or-hot-reload)
+      :nv "c c" #'flutter-run-or-hot-reload
+      :nv "c C" #'flutter-hot-restart
+      :nv "c h" #'switch-to-flutter)
 (setq lsp-dart-flutter-sdk-dir "/home/jonas/private/development/flutter/flutter/")
 (setq lsp-dart-sdk-dir "/home/jonas/private/development/flutter/flutter/bin/cache/dart-sdk/")
 
@@ -308,9 +317,13 @@
 (setq doom-modeline-major-mode-color-icon t)
 ;;  (setq doom-modeline-buffer-state-icon t)
 (setq doom-modeline-buffer-modification-icon nil)
-(setq doom-modeline-buffer-file-name-style 'relative-from-project)
-;;  (setq doom-modeline-minor-modes nil)
+(setq doom-modeline-buffer-file-name-style 'default)
+(setq doom-modeline-minor-modes nil)
 (setq doom-modeline-enable-word-count nil)
+(setq line-number-mode nil)
+(setq column-number-mode nil)
+(setq lsp-modeline-code-actions-enable nil)
+(setq timeclock-mode-line-display nil)
 (setq doom-modeline-buffer-encoding nil)
 (setq doom-modeline-indent-info nil)
 ;;  (setq doom-modeline-checker-simple-format t)
@@ -363,10 +376,10 @@
         (when (or treemacs-follow-after-init treemacs-follow-mode)
           (treemacs--follow))))))
 
-(setq which-key-idle-delay 0.5)
+(setq which-key-idle-delay 1)
 
 (after! company
-  (setq company-idle-delay 0.5
+  (setq company-idle-delay 0
         company-minimum-prefix-length 2)
   (setq company-show-numbers t)
   (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
