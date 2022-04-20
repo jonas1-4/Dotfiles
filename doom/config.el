@@ -11,7 +11,7 @@
 
 (setq display-line-numbers-type 'relative)
 
-(setq doom-font (font-spec :family "Roboto Mono" :size 24))
+(setq doom-font (font-spec :family "Roboto Mono" :size 16))
 
 (defun my-compilation-hook ()
   (when (not (get-buffer-window "*compilation*"))

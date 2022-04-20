@@ -91,10 +91,17 @@
 "playerctl play-pause & mpc toggle "
 	XF86AudioPlay
 
-# Play/Pause Playerctl(Firefox etc.) + mpd
+# Play/Pause Playerctl(Spotifly etc.) + mpd
 "playerctl  --player=spotify play-pause & mpc toggle "
 	alt+p
 
+# Play/Pause Playerctl(Spotifly etc.) + mpd
+"playerctl  --player=spotify previous"
+	alt+shift+Left
+
+# Play/Pause Playerctl(Spotifly etc.) + mpd
+"playerctl  --player=spotify next"
+	alt+shift+Right
 
 # Play/Pause Playerctl(Firefox etc.)
 "playerctl play-pause"

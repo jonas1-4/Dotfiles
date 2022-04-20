@@ -38,7 +38,7 @@ Linenumbers
 ** Font
 
 #+begin_src emacs-lisp :tangle ./config.el
-(setq doom-font (font-spec :family "Roboto Mono" :size 24))
+(setq doom-font (font-spec :family "Roboto Mono" :size 16))
 #+end_src
 
 
