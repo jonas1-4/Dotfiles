@@ -4,3 +4,6 @@ export EXTERNALSCREEN=$(/home/jonas/private/development/scripts/monitors/externa
 python ~/private/development/scripts/Background/RandomBg.py currbg
 xmodmap .config/xkb/Xmodmap &
 xbindkeys -p&
+sudo modprobe r8168 &&  sudo mkinitcpio -p linux &
+sudo sysctl -w abi.vsyscall32=0 &
+echo "connect AC:12:2F:8A:9F:78 " | bluetoothctl &

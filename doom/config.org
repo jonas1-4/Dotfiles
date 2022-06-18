@@ -125,6 +125,11 @@ Wrap lines to Windowsize
      `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
      `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
 
+**** ImageSize
+
+#+begin_src emacs-lisp :tangle ./config.el
+(setq org-image-actual-width (list 550))
+#+end_src
 **** Hide SrcBlocks
 
 #+begin_src emacs-lisp :tangle ./config.el

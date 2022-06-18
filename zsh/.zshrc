@@ -69,6 +69,9 @@ export TerminalEmulator=kitty
 export CHROME_EXECUTABLE=/usr/bin/chromium
 export LAPTOPSCREEN=$(/home/jonas/private/development/scripts/monitors/laptop.sh)
 export EXTERNALSCREEN=$(/home/jonas/private/development/scripts/monitors/external.sh)
+
+
+export GOOGLE_APPLICATION_CREDENTIALS="/home/jonas/private/documents/arbeit/OplusFON/oplus-fon-346d78c8526e.json"
 alias google-chrome=firefox
 
 autoload -Uz compinit && compinit

@@ -9,7 +9,7 @@
 (package! csv-mode)
 (package! org-clock-today)
 (package! org-auto-tangle)
-;(package! treemacs-persp)
+(package! exwm)
 
 
 (package! centered-cursor-mode

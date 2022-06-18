@@ -205,13 +205,16 @@
 	alt +XF86MonBrightnessDown
 
 "xclip -o"
-   alt+shift+l
+   alt + shift + l
 
 "scrot -s ~/foo.png && xclip ~/foo.png && rm ~/foo.png"
-	alt+F2
+	alt + F2
 
-"scrot '%Y-%m-%d-%m-%s_$p.png' -u -e 'mv $f ~/private/pictures/Screenshots/'"
-	F2
+"scrot '%Y-%m-%d-%m-%s_$p.png' -s -e 'mv $f ~/private/pictures/screenshots/'"
+	control + F2
+
+"scrot '%Y-%m-%d-%m-%s_$p.png' -u -e 'mv $f ~/private/pictures/screenshots/'"
+	shift + F2
 
 
 

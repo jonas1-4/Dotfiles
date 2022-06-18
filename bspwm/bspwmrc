@@ -3,7 +3,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 
 laptop= ${private/development/scripts/monitors/laptop.sh}
-external= ${private/development/scripts/monitors/laptop.sh}
+external= ${private/development/scripts/monitors/external.sh}
 my_laptop_external_monitor=$(xrandr --query | grep $external)
 if [[ $my_laptop_external_monitor = *disconnected* ]]; then
     bspc monitor $laptop -d 1 2 4 6 7 8 9 0
@@ -63,6 +63,7 @@ bspc rule -a "heroic" desktop='6'
 bspc rule -a "Heroic" desktop='6' 
 bspc rule -a "Enigmatica 2: Expert" desktop='6' state=fullscreen follow=on
 bspc rule -a "multimc" desktop='6'  
+bspc rule -a "Filezilla" desktop='5'  
 
 emacs --daemon &
 emacs --with-profile own --daemon &

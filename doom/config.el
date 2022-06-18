@@ -36,6 +36,8 @@
 
 (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode nil)))
 
+(setq org-image-actual-width (list 550))
+
 ;(add-hook 'org-mode-hook 'org-babel-hide-markers-mode)
 
   (defun org-babel-tangle-config ()
@@ -278,6 +280,59 @@
         lsp-ui-sideline-show-code-actions nil))
 
 
+    (use-package exwm
+  :config
+  ;; default num of workspace
+  (setq exwm-workspace-number 5)
+
+  (add-hook 'exwm-update-class-hook #'efs/exwm-update-class)
+  (setq exwm-input-prefix-keys
+        '(?\C-x
+          ?\C-w
+          ?\C-h
+          ?\C-u
+          ?\M-x
+          ?\M-`
+          ?\M-\&
+          ?\M-\;
+          ?\C-\M-j
+          ?\C-\
+	  ?\M-h
+          ))
+  (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
+
+  (setq exwm-input-global-keys
+        `(
+          ([?\s-r] . exwm-reset)
+          ([?\s-o] . counsel-switch-buffer)
+          ([s-left] . windmove-left)
+          ([s-right] . windmove-right)
+          ([s-up] . windmove-up)
+          ([s-down] . windmove-douwn)
+          ([?\s-h] . windmove-left)
+          ([?\s-l] . windmove-right)
+          ([?\s-k] . windmove-up)
+          ([?\s-j] . windmove-douwn)
+          ([?\s-v] . (shell-command "sh ~/private/dotfiles/polybar/polybar/hack/scripts/powermenu.sh"))
+          ([?\s-&] . (lambda (command)(interactive (list (read-shell-command "$ ")))
+                       (start-process-shell-command command nil command)))
+          ([?\s-a] . counsel-linux-app)
+
+          ([?\s-w] . exwm-workspace-switch)
+          ([?\s-\+] . (lambda () (interactive) (exwm-workspace-switch-create 0)))
+          ([?\s-\[] . (lambda () (interactive) (exwm-workspace-switch-create 1)))
+          ([?\s-\{] . (lambda () (interactive) (exwm-workspace-switch-create 2)))
+          ([?\s-\(] . (lambda () (interactive) (exwm-workspace-switch-create 3)))
+          ([?\s-\&] . (lambda () (interactive) (exwm-workspace-switch-create 4)))
+          ([?\s-\=] . (lambda () (interactive) (exwm-workspace-switch-create 5)))
+          ([?\s-\)] . (lambda () (interactive) (exwm-workspace-switch-create 6)))
+          ([?\s-\}] . (lambda () (interactive) (exwm-workspace-switch-create 7)))
+          ([?\s-\]] . (lambda () (interactive) (exwm-workspace-switch-create 8)))
+          ([?\s-\*] . (lambda () (interactive) (exwm-workspace-switch-create 9)))))
+
+    ;; 's-N': Switch to certain workspace with Super (Win) plus a number key (0 - 9)
+  (exwm-enable))
+
 
 (defun switch-to-flutter()
   (interactive)
@@ -285,6 +340,7 @@
     (switch-to-buffer buf)))
 
 
+ 
 (use-package! lsp-dart)
 (map! :after dart-mode
       :map dart-mode-map
