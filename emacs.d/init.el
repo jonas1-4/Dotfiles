@@ -229,7 +229,7 @@
   ;; bind "SPC a"
   "a" 'org-agenda
   "SPC" 'counsel-projectile
-  "p" 'projectile-commander
+  "p" 'projectile-command-map
   "b" 'counsel-bookmark
   "c" 'org-capture))
 
