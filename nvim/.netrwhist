@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/var/log'
+let g:netrw_dirhist_8='/home/jonas/.zsh'
+let g:netrw_dirhist_7='/home/jonas/Developing/Flutter/math_trainer/lib/Activities/Multiplayer'
+let g:netrw_dirhist_6='/home/jonas/Developing/Flutter/math_trainer/lib/Activities'
+let g:netrw_dirhist_5='/home/jonas/Developing/Flutter/math_trainer/lib'
+let g:netrw_dirhist_4='/home/jonas/Developing/Flutter/math_trainer'
+let g:netrw_dirhist_3='/home/jonas/Developing/Flutter/math_trainer/android/app/src/main/res/drawable'
+let g:netrw_dirhist_2='/home/jonas'
+let g:netrw_dirhist_1='/home/jonas/.zsh'
+let g:netrw_dirhist_0='/home/jonas/.cmus'
