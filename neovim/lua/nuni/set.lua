@@ -12,7 +12,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.list = true
 vim.opt.listchars='tab:>-'
 
-vim.o.vimDir ='$HOME/.vim';
+-- vim.o.vimDir ='$HOME/.vim';
 
 
 -- Save undos between sessions
