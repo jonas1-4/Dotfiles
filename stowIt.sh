@@ -7,10 +7,6 @@ BLUE='\033[1;34m'
 RED='\033[1;30m'
 NC='\033[0m'
 
-# Navigate to the directory of this script (generally ~/.dotfiles/.bin)
-cd $(dirname $(readlink -f $0))
-cd ..
-
 echo -e "${BLUE}Stashing existing changes...${NC}"
 stash_result=$(git stash push -m "sync-dotfiles: Before syncing dotfiles")
 needs_pop=1
@@ -36,10 +32,14 @@ if [[ ! -z $unmerged_files ]]; then
    printf %"s\n" $unmerged_files  # Ensure newlines are printed
 else
    # Run stow to ensure all new dotfiles are linked
-   stow -tR ~ home
-   stow -R -v --adopt -t ~/.config/  yabai
-   stow -R -v --adopt -t ~/.config/  wezterm
-   stow -R -v --adopt -t ~/.config/  tmux
-   stow -R -v --adopt -t ~/.config/ nvim
+   stow -t ~ home
+   mkdir -p ~/.config/yabai
+   stow -R -v --adopt -t ~/.config/yabai  yabai
+   mkdir -p ~/.config/wezterm
+   stow -R -v --adopt -t ~/.config/wezterm  wezterm
+   mkdir -p ~/.config/tmux
+   stow -R -v --adopt -t ~/.config/tmux  tmux
+   mkdir -p ~/.config/nvim
+   stow -R -v --adopt -t ~/.config/nvim nvim
 
 fi
