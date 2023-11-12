@@ -6,8 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 source ~/.privateZshrc
 
-source ~/.privateZshrc
-
 alias devChrome="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir='/tmp/chrome_dev_test' --disable-web-security"
 alias ls="lsd"
 export ANDROID_HOME=/Users/jonasackermann/Library/Android/sdk/
