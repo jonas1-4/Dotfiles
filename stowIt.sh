@@ -40,6 +40,6 @@ else
    mkdir -p ~/.config/tmux
    stow -R -v --adopt -t ~/.config/tmux  tmux
    mkdir -p ~/.config/nvim
-   stow -R -v --adopt -t ~/.config/nvim nvim
+   stow -R -v --adopt -t ~/.config/nvim neovim
 
 fi
