@@ -18,5 +18,5 @@ vim.opt.listchars='tab:>-'
 -- Save undos between sessions
 vim.opt.undofile = true
 -- Specify the directory where undo files are stored
-vim.opt.undodir = "$HOME/.undodir"
+-- vim.opt.undodir = "$HOME/.undodir"
 vim.opt.undolevels = 10000  -- This allows for 1000 undos
