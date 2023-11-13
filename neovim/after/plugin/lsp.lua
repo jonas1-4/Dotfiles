@@ -13,12 +13,6 @@ nvim_lsp.eslint.setup({
 	end,
 })
 
--- Use a loop to conveniently setup multiple servers
-local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'angularls', 'intelephense', 'lua_ls' }
-
-for _, lsp in ipairs(servers) do
-	nvim_lsp[lsp].setup { on_attach = on_attach }
-end
 
 -- Treesitter for better syntax highlighting
 require('nvim-treesitter.configs').setup {
