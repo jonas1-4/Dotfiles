@@ -12,8 +12,6 @@ vim.keymap.set("v", "d", '"_d')
 vim.keymap.set("n", "<leader>d", '""d')
 vim.keymap.set("n", "<leader>D", '""D')
 vim.keymap.set("v", "<leader>d", '""d')
-nnoremap <leader>D ""D
-vnoremap <leader>d ""d
 
 vim.keymap.set("n", "<leader>et", "<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>")
 vim.keymap.set("n", "<leader>rr", function()
