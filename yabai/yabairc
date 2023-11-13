@@ -1,4 +1,4 @@
-declare -A gapsoff
+eclare -A gapsoff
 declare -A color
 
 yabai -m config top_padding    8
