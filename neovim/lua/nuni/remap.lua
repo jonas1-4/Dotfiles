@@ -8,6 +8,7 @@ vim.keymap.set("n", "<leader>bk", ":bp <CR>")
 vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("n", "d", '"_d')
 vim.keymap.set("n", "D", '"_D')
+vim.keymap.set("n", "D", '"_D')
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
