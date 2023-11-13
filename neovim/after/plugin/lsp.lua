@@ -94,7 +94,6 @@ nvim_lsp.tsserver.setup{
 }
 nvim_lsp.kotlin_language_server.setup{
     on_attach = on_attach,
-    flags = lsp_flags,
     capabilities = capabilities,
 }
 nvim_lsp.dartls.setup{}
