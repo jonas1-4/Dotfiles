@@ -9,8 +9,7 @@ vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("n", "d", '"_d')
 vim.keymap.set("n", "D", '"_D')
 vim.keymap.set("v", "d", '"_d')
-vnoremap d "_d
-
+vim.keymap.set("v", "d", '"_d')
 nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
