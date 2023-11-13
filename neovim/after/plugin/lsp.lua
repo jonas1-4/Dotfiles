@@ -3,12 +3,6 @@
 -- LSP config
 --
 local nvim_lsp = require('lspconfig')
--- Use a loop to conveniently setup multiple servers
-local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'angularls', 'intelephense', 'lua_ls' }
-
-for _, lsp in ipairs(servers) do
-	nvim_lsp[lsp].setup { on_attach = on_attach }
-end
 
 nvim_lsp.eslint.setup({
 	on_attach = function(client, bufnr)
@@ -18,38 +12,6 @@ nvim_lsp.eslint.setup({
 		})
 	end,
 })
-
-
--- Treesitter for better syntax highlighting
-require('nvim-treesitter.configs').setup {
-	highlight = {
-		enable = true,
-	},
-}
-
-nvim_lsp.tsserver.setup{
-    on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
-    end,
-}
-nvim_lsp.kotlin_language_server.setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-nvim_lsp.dartls.setup{}
-
--- Autocompletion
-require('compe').setup {
-	enabled = true,
-	source = {
-		path = true,
-		buffer = true,
-		nvim_lsp = true,
-		nvim_lua = true,
-		treesitter = true,
-	}
-}
 
 local on_attach = function(client, bufnr)
 	-- Navigate to the definition of the symbol under the cursor
@@ -111,6 +73,43 @@ local on_attach = function(client, bufnr)
 	end, { noremap = true, silent = true, desc = 'Format File' })
 end
 
+-- Use a loop to conveniently setup multiple servers
+local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'angularls', 'intelephense', 'lua_ls' }
+
+for _, lsp in ipairs(servers) do
+	nvim_lsp[lsp].setup { on_attach = on_attach }
+end
+
+-- Treesitter for better syntax highlighting
+require('nvim-treesitter.configs').setup {
+	highlight = {
+		enable = true,
+	},
+}
+
+nvim_lsp.tsserver.setup{
+    on_attach = function(client)
+        client.resolved_capabilities.document_formatting = false
+    end,
+}
+nvim_lsp.kotlin_language_server.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+}
+nvim_lsp.dartls.setup{}
+
+-- Autocompletion
+require('compe').setup {
+	enabled = true,
+	source = {
+		path = true,
+		buffer = true,
+		nvim_lsp = true,
+		nvim_lua = true,
+		treesitter = true,
+	}
+}
 
 -- Use Tab for autocompletion
 vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { noremap = true, expr = true })
