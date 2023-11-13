@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>fp", ":ex ~/.config/nvim/ <CR>")
 vim.keymap.set("n", "<leader>bd", ":bd <CR>")
 vim.keymap.set("n", "<leader>bj", ":bn <CR>")
 vim.keymap.set("n", "<leader>bk", ":bp <CR>")
-vim.keymap.set("n", "x", '')
+vim.keymap.set("n", "x", '"_x')
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
