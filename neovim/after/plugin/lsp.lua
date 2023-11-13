@@ -3,7 +3,6 @@
 -- LSP config
 --
 local nvim_lsp = require('lspconfig')
-
 -- Use a loop to conveniently setup multiple servers
 local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'angularls', 'intelephense', 'lua_ls' }
 
