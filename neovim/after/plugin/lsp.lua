@@ -92,7 +92,7 @@ nvim_lsp.tsserver.setup{
         client.resolved_capabilities.document_formatting = false
     end,
 }
-nvim_lsp.tsserver.setup{
+nvim_lsp.angularls.setup{
     on_attach = function(client)
         client.resolved_capabilities.document_formatting = false
     end,
