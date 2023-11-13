@@ -31,7 +31,6 @@ require("flutter-tools").setup {
     exception_breakpoints = {},
     register_configurations = function(paths)
       require("dap").configurations.dart = {
-        <put here config that you would find in .vscode/launch.json>
       }
     end,
   },
