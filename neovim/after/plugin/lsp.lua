@@ -97,8 +97,7 @@ nvim_lsp.kotlin_language_server.setup{
     flags = lsp_flags,
     capabilities = capabilities,
 }
-nvim_lsp.dartls.setup{
-}
+nvim_lsp.dartls.setup{}
 
 -- Autocompletion
 require('compe').setup {
