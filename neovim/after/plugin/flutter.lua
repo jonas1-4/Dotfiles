@@ -67,7 +67,7 @@ require("flutter-tools").setup {
       virtual_text_str = "■", -- the virtual text character to highlight
     },
     settings = {
-      showTodos = true,
+      showTodos = false,
       completeFunctionCalls = true,
       analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
       renameFilesWithClasses = "prompt", -- "always"
