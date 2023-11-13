@@ -97,7 +97,7 @@ nvim_lsp.kotlin_language_server.setup{
     flags = lsp_flags,
     capabilities = capabilities,
 }
-nvim_lsp.kotlin_language_server.setup{
+nvim_lsp.dartls.setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
