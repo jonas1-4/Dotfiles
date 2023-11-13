@@ -7,6 +7,7 @@ vim.o.scrolloff = 100
 vim.o.tabstop = 4
 vim.opt.autoindent = false
 vim.opt.expandtab = true
+p 
 vim.opt.shiftwidth = 4
 vim.o.clipboard = 'unnamedplus'
 vim.o.list = true
