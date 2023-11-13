@@ -79,8 +79,7 @@ require("lazy").setup({
 
     -- akinsho/flutter-tools.nvim config
     {
-        'akinsho/flutter-tools.nvim',
-        dependen{
+{
     'akinsho/flutter-tools.nvim',
     lazy = false,
     dependencies = {
@@ -88,8 +87,7 @@ require("lazy").setup({
         'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
     config = true,
-}cies = 'nvim-lua/plenary.nvim',
-        config = [[require('flutter-tools').setup{}]],
+}
     },
 
     {
