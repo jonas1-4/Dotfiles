@@ -29,10 +29,10 @@ require("flutter-tools").setup {
     -- if empty dap will not stop on any exceptions, otherwise it will stop on those specified
     -- see |:help dap.set_exception_breakpoints()| for more info
     exception_breakpoints = {},
-    register_configurations = function(paths)
-      require("dap").configurations.dart = {
-      }
-    end,
+    -- register_configurations = function(paths)
+    --   require("dap").configurations.dart = {
+    --   }
+    -- end,
   },
   root_patterns = { ".git", "pubspec.yaml" }, -- patterns to find the root of your flutter project
   fvm = false, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
