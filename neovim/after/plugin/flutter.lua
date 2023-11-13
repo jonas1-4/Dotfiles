@@ -28,7 +28,7 @@ require("flutter-tools").setup {
     run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
     -- if empty dap will not stop on any exceptions, otherwise it will stop on those specified
     -- see |:help dap.set_exception_breakpoints()| for more info
-    exception_breakpoints = {}
+    exception_breakpoints = {},
     register_configurations = function(paths)
       require("dap").configurations.dart = {
         <put here config that you would find in .vscode/launch.json>
