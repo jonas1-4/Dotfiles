@@ -4,6 +4,13 @@
 --
 local nvim_lsp = require('lspconfig')
 
+-- Use a loop to conveniently setup multiple servers
+local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'angularls', 'intelephense', 'lua_ls' }
+
+for _, lsp in ipairs(servers) do
+	nvim_lsp[lsp].setup { on_attach = on_attach }
+end
+
 nvim_lsp.eslint.setup({
 	on_attach = function(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
