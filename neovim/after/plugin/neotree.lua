@@ -42,7 +42,6 @@ require("neo-tree").setup({
             {
                 event = "file_opened",
                 handler = function(file_path)
-                    -- vimc.cmd("Neotree close")
                     require("neo-tree.command").execute({ action = "close" })
                 end
             },
