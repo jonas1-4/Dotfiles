@@ -73,6 +73,7 @@ local on_attach = function(client, bufnr)
 	end, { noremap = true, silent = true, desc = 'Format File' })
     if client.name == 'tsserver' then
         client.resolved_capabilities.document_formatting = false
+    end
 
 end
 
