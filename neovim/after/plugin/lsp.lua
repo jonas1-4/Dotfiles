@@ -91,7 +91,6 @@ require('nvim-treesitter.configs').setup {
 
 nvim_lsp.tsserver.setup{
     on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
         on_attach()
     end,
 }
