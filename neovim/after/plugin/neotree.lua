@@ -31,7 +31,6 @@ require("neo-tree").setup({
             StaticMethod = { icon = '󰠄 ', hl = 'Function' },
         }
     },
-    -- Add this section only if you've configured source selector.
     source_selector = {
         sources = {
             { source = "filesystem", display_name = " 󰉓 Files " },
