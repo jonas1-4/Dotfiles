@@ -91,8 +91,6 @@ require('nvim-treesitter.configs').setup {
 	},
 }
 
-nvim_lsp.angularls.setup{
-    on_attach = on_attach,
 }
 nvim_lsp.kotlin_language_server.setup{
     on_attach = on_attach,
