@@ -92,8 +92,7 @@ require('nvim-treesitter.configs').setup {
 }
 
 nvim_lsp.tsserver.setup{
-    on_attach = 
-        on_attach
+    on_attach = on_attach,
 }
 nvim_lsp.angularls.setup{
     on_attach = on_attach,
