@@ -43,6 +43,7 @@ require("neo-tree").setup({
                 event = "file_opened",
                 handler = function(file_path)
                     require("neo-tree.command").execute({ action = "close" })
+                    print('gugu')
                 end
             },
 
