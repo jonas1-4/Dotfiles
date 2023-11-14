@@ -71,7 +71,8 @@ local on_attach = function(client, bufnr)
 			vim.lsp.buf.format()
 		end
 	end, { noremap = true, silent = true, desc = 'Format File' })
-    if client.name == 'tsserver'
+    if client.name == 'tsserver' then
+
 end
 
 -- Use a loop to conveniently setup multiple servers
