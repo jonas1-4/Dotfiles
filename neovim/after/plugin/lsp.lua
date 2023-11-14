@@ -71,6 +71,7 @@ local on_attach = function(client, bufnr)
 			vim.lsp.buf.format()
 		end
 	end, { noremap = true, silent = true, desc = 'Format File' })
+
 end
 
 -- Use a loop to conveniently setup multiple servers
