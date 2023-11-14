@@ -88,9 +88,8 @@ require('nvim-treesitter.configs').setup {
 }
 
 nvim_lsp.tsserver.setup{
-    on_attach = function(client){
-
-    }
+    on_attach = function(client){}
+        client.resolved_capabilities.document_formatting = false
     end,
 }
 nvim_lsp.angularls.setup{
