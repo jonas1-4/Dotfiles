@@ -51,3 +51,4 @@ require("neo-tree").setup({
     },
     -- Other options ...
 })
+vim.keymap.set("n", "<leader>fp", ":ex ~/.config/nvim/ <CR>")
