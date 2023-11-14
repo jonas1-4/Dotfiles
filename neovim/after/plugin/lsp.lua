@@ -93,9 +93,7 @@ nvim_lsp.tsserver.setup{
     end,
 }
 nvim_lsp.angularls.setup{
-    on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
-    end,
+    on_attach = on_attach,
 }
 nvim_lsp.kotlin_language_server.setup{
     on_attach = on_attach,
