@@ -71,7 +71,9 @@ local on_attach = function(client, bufnr)
 			vim.lsp.buf.format()
 		end
 	end, { noremap = true, silent = true, desc = 'Format File' })
-    if client.name == 'tsserver' then
+    if clfunction(client)
+        client.resolved_capabilities.document_formatting = false
+    endient.name == 'tsserver' then
 
 end
 
