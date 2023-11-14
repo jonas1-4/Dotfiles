@@ -38,7 +38,6 @@ require("neo-tree").setup({
             { source = "git_status", display_name = " 󰊢 Git " },
         },
         event_handlers = {
-            print('gugu')
             {
                 event = "file_opened",
                 handler = function(file_path)
