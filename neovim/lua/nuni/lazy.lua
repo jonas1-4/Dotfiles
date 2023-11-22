@@ -129,13 +129,12 @@ require("lazy").setup({
         -- Lua
         {
             "folke/zen-mode.nvim",
-            opts = {
+            opts   = {
             },
-        config       = function()
-            require("zen-mode").setup({
-            })
-            require("telescope").load_extension("undo")
-        end,
+            config = function()
+                require("zen-mode").setup({
+                })
+            end,
         }
     },
 })
