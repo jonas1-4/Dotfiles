@@ -130,7 +130,17 @@ require("lazy").setup({
         {
             "folke/zen-mode.nvim",
             opts = {
-            }
-        },
+            },
+        config       = function()
+            require("telescope").setup({
+                extensions = {
+                    undo = {
+                        -- telescope-undo.nvim config, see below
+                    },
+                },
+            })
+            require("telescope").load_extension("undo")
+        end,
+        }
     },
 })
