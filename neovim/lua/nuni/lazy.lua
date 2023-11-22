@@ -132,9 +132,7 @@ require("lazy").setup({
             opts = {
             },
         config       = function()
-            require("telescope").setup({
-                extensions = {
-                    undo = {
+            require("zen-mode").setup({
                         -- telescope-undo.nvim config, see below
                     },
                 },
