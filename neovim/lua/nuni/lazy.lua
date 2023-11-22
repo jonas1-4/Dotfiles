@@ -129,7 +129,7 @@ require("lazy").setup({
         -- Lua
         {
             "folke/zen-mode.nvim",
-          j opts = {
+            opts = {
             }
         }
     },
