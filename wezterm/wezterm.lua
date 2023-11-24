@@ -84,6 +84,8 @@ config.keys = {
     action = wezterm.action.ActivateTabRelative(1),
   },
 }
+
+-- Zenmode
 -- and finally, return the configuration to wezterm
 return config
 
