@@ -137,5 +137,5 @@ require("lazy").setup({
             end,
         }
     },
-    {}
+    { 'https://tpope.io/vim/fugitive.git'}
 })
