@@ -21,8 +21,8 @@ local on_attach = function(client, bufnr)
 end
 
 -- Use a loop to conveniently setup multiple servers
-local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'tsserver', 'angularls', 'dartls' }
-
+local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'tsserver', 'angularls',  }
+'dartls'
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup { on_attach = on_attach }
 end
