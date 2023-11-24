@@ -21,68 +21,68 @@ config.colors = {
     }
 }
 config.keys = {
-  -- Turn off the default CMD-m Hide action, allowing CMD-m to
-  -- be potentially recognized and handled by the tab
-  {
-    key = '+',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(0),
-  },
-  {
-    key = '[',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(1),
-  },
-  {
-    key = '{',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(2),
-  },
-  {
-    key = '(',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(3),
-  },
-  {
-    key = '&',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(4),
-  },
-  {
-    key = '=',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(5),
-  },
-  {
-    key = ')',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(6),
-  },
-  {
-    key = '}',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(7),
-  },
-  {
-    key = ']',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(8),
-  },
-  {
-    key = '*',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTab(9),
-  },
-  {
-    key = 'LeftArrow',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTabRelative(-1),
-  },
-  {
-    key = 'RightArrow',
-    mods = 'CMD',
-    action = wezterm.action.ActivateTabRelative(1),
-  },
+    -- Turn off the default CMD-m Hide action, allowing CMD-m to
+    -- be potentially recognized and handled by the tab
+    {
+        key = '+',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(0),
+    },
+    {
+        key = '[',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(1),
+    },
+    {
+        key = '{',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(2),
+    },
+    {
+        key = '(',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(3),
+    },
+    {
+        key = '&',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(4),
+    },
+    {
+        key = '=',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(5),
+    },
+    {
+        key = ')',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(6),
+    },
+    {
+        key = '}',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(7),
+    },
+    {
+        key = ']',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(8),
+    },
+    {
+        key = '*',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTab(9),
+    },
+    {
+        key = 'LeftArrow',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTabRelative(-1),
+    },
+    {
+        key = 'RightArrow',
+        mods = 'CMD',
+        action = wezterm.action.ActivateTabRelative(1),
+    },
 }
 
 -- Zenmode
@@ -110,4 +110,3 @@ wezterm.on('user-var-changed', function(window, pane, name, value)
 end)
 -- and finally, return the configuration to wezterm
 return config
-
