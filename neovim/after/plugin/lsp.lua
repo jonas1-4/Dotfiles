@@ -60,7 +60,6 @@ vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,
 
 vim.keymap.set('n', '<leader>cd', function() vim.lsp.buf.definition() end,
     { noremap = true, silent = true, desc = 'Go To Definition' })
-
 vim.keymap.set('n', 'gd', function() vim.lsp.buf.implementation() end,
     { noremap = true, silent = true, desc = 'Go To Definition' })
 
