@@ -4,7 +4,7 @@ vim.keymap.set("n", "<leader>fs", vim.cmd.write)
 vim.keymap.set("n", "<leader>bd", ":bd <CR>")
 vim.keymap.set("n", "<leader>bj", ":bn <CR>")
 vim.keymap.set("n", "<leader>bk", ":bp <CR>")
-vim.keymap.set("v", "p", '"_p')
+vim.keymap.set("v", "p", '"0p')
 
 vim.keymap.set("n", "<leader>et", "<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>")
 vim.keymap.set("n", "<leader>rr", function()
