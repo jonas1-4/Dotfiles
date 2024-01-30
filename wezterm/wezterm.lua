@@ -111,7 +111,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
     index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
   end
 
-  return zoomed .. index .. tab.active_pane.title
+  return zoomed .. index .. 
 end)
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
