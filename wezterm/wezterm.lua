@@ -91,6 +91,7 @@ local function get_current_working_dir(tab)
 
     return current_dir == HOME_DIR and "." or string.gsub(current_dir, "(.*[/\\])(.*)", "%2")
 end
+
 wezterm.on('format-window-title', function(tab, pane, tabs, panes)
     local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(pane))
 
