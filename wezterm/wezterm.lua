@@ -85,7 +85,14 @@ config.keys = {
     },
 }
 
--- Zenmod 
+local function get_current_working_dir(tab)
+    local current_dir = tab.active_pane.current_working_dir
+    local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
+
+    return current_dir == HOME_DIR and "." or string.gsub(current_dir, "(.*[/\\])(.*)", "%2")
+end
+
+-- Zenmod
 local function get_current_working_dir(tab)
   local current_dir = tab.active_pane.current_working_dir or ''
   local HOME_DIR = string.format('file://%s', os.getenv('HOME'))
@@ -134,8 +141,7 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
   return {
     { Text = title },
   }
-end)
-
+end)e
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
     if name == "ZEN_MODE" then
