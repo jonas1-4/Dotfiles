@@ -95,8 +95,8 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
     index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
   end
 
-  -- return zoomed .. string.match(tab.active_pane.current_working_dir, "(%d+)/?$")
-  return zoomed .. tab.active_pane.current_working_dir
+  return zoomed .. string.match(tab.active_pane.current_working_dir, "(%d+)/?$")
+  -- return zoomed .. tab.active_pane.current_working_dir
 end
 )
 
