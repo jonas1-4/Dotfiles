@@ -92,29 +92,56 @@ local function get_current_working_dir(tab)
     return current_dir == HOME_DIR and "." or string.gsub(current_dir, "(.*[/\\])(.*)", "%2")
 end
 
---
--- wezterm.on('format-window-title', function(tab, pane, tabs, panes, config )
---
--- 	local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
---
---
--- 	return "haha"
--- end)
-wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
-  local zoomed = ''
-  if tab.active_pane.is_zoomed then
-    zoomed = '[Z] '
+-- Zenmod
+local function get_current_working_dir(tab)
+  local current_dir = tab.active_pane.current_working_dir or ''
+  local HOME_DIR = string.format('file://%s', os.getenv('HOME'))
+
+  return current_dir == HOME_DIR and '.' or string.gsub(current_dir, '(.*[/\\])(.*)', '%2')
+end
+
+local function get_process(tab)
+  if not tab.active_pane or tab.active_pane.foreground_process_name == '' then
+    return '[?]'
   end
 
-  local index = ''
-  if #tabs > 1 then
-    index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
+  local process_name = string.gsub(tab.active_pane.foreground_process_name, '(.*[/\\])(.*)', '%2')
+  if string.find(process_name, 'kubectl') then
+    process_name = 'kubectl'
   end
 
-  local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
-  return zoomed .. index  .. title .."ha"
-end)
--- Zenmode
+  return process_icons[process_name] or string.format('[%s]', process_name)
+end
+
+wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
+  local has_unseen_output = false
+  if not tab.is_active then
+    for _, pane in ipairs(tab.panes) do
+      if pane.has_unseen_output then
+        has_unseen_output = true
+        break
+      end
+    end
+  end
+
+  local cwd = wezterm.format({
+    { Attribute = { Intensity = 'Bold' } },
+    { Text = get_current_working_dir(tab) },
+  })
+
+  local title = string.format(' %s ~ %s  ', get_process(tab), cwd)
+
+  if has_unseen_output then
+    return {
+      { Foreground = { Color = '#28719c' } },
+      { Text = title },
+    }
+  end
+
+  return {
+    { Text = title },
+  }
+end)e
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
     if name == "ZEN_MODE" then
