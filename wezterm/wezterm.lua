@@ -100,7 +100,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, hover, max_width)
 
 
 	return {
-		{ "haha" },
+		{ title },
 	}
 end)
 
