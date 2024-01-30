@@ -86,7 +86,7 @@ config.keys = {
 }
 
 wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
-    return pane.current_working_dir.match(,"(./)")
+    return pane.current_working_dir.match(pane.current_working_dir,"(./)")
 end
 )
 
