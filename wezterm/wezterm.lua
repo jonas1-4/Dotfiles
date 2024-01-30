@@ -94,8 +94,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   }
 end)
 
-return {
-}-- Zenmode
+-- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
     if name == "ZEN_MODE" then
