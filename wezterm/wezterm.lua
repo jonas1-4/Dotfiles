@@ -96,6 +96,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
   end
 
   return zoomed .. string.match(tab.active_pane.current_working_dir, "(%d+)/?$")
+  return zoomed .. string.match(tab.active_pane.current_working_dir, "(%d+)/?$")
 end
 )
 
