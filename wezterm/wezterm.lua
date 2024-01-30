@@ -83,7 +83,9 @@ config.keys = {
         mods = 'CMD',
         action = wezterm.action.ActivateTabRelative(1),
     },
-}wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
+}
+
+wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
   local zoomed = ''
   if tab.active_pane.is_zoomed then
     zoomed = '[Z] '
