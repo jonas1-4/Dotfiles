@@ -103,6 +103,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, hover, max_width)
 		{ "haha" },
 	}
 end)
+
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
