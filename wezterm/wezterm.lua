@@ -83,7 +83,19 @@ config.keys = {
         mods = 'CMD',
         action = wezterm.action.ActivateTabRelative(1),
     },
-}
+}wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
+  local zoomed = ''
+  if tab.active_pane.is_zoomed then
+    zoomed = '[Z] '
+  end
+
+  local index = ''
+  if #tabs > 1 then
+    index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
+  end
+
+  return zoomed .. index .. tab.active_pane.title
+end)
 
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
