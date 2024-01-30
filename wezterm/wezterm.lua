@@ -87,8 +87,8 @@ config.keys = {
 
 local function get_current_working_dir(tab)
     local current_dir = tab.active_pane.current_working_dir
-    if title == nil
-        then title = "hallo"
+    if current_dir == nil
+        then current_dir = "hallo"
     end
     local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
 
