@@ -86,7 +86,7 @@ config.keys = {
 }
 
 local function get_current_working_dir(tab)
-    local current_dir = tab.active_pane.current_working_dir
+    local current_dir = tab.active_pane.current_working_dir.path
     if current_dir == nil
         then current_dir = "hallo"
     end
