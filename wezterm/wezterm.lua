@@ -96,14 +96,6 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
   end
 
   return zoomed .. index .. tab.active_pane.current_working_dir
-end)
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-    local pane = tab.active_pane
-    local cwd = pane.current_working_dir
-    return {
-        { Background = { Color = color } },
-        { Text = " " .. cwd .. " " },
-    }
 end
 )
 
