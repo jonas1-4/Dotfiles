@@ -134,7 +134,7 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
   return {
     { Text = title },
   }
-end)e
+end)
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
     if name == "ZEN_MODE" then
