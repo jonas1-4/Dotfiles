@@ -123,12 +123,5 @@ wezterm.on('user-var-changed', function(window, pane, name, value)
     end
     window:set_config_overrides(overrides)
 end)
-config.keys = {
-  {
-    key = 'r',
-    mods = 'CMD|SHIFT',
-    action = wezterm.action.ReloadConfiguration,
-  },
-}
 -- and finally, return the configuration to wezterm
 return config
