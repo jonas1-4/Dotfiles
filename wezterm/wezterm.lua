@@ -92,7 +92,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes)
     return {
         { Text = title },
     }
-)
+end)
 
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
