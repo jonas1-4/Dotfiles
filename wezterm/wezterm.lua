@@ -99,7 +99,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config )
 
 
 	return "haha"
-end
+end)
 
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
