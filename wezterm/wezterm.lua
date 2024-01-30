@@ -88,7 +88,6 @@ config.keys = {
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local pane = tab.active_pane
   local cwd = pane. current_working_dir
-  local color = "navy"
   if tab.is_active then
     color = "blue"
   end
