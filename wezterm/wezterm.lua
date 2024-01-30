@@ -111,7 +111,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
     index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
   end
 
-	local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
+  local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
   return zoomed .. index  
 end)
 -- Zenmode
