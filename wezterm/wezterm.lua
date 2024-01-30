@@ -112,7 +112,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
   end
 
   -- local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
-  return zoomed .. index  .. title
+  return zoomed .. index  .. "haha"
 end)
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
