@@ -93,7 +93,7 @@ local function get_current_working_dir(tab)
 end
 
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, , hover, max_width)
+wezterm.on("format-tab-title", function(tab, tabs, panes, hover, max_width)
 
 
 	local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
