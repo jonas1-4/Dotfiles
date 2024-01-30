@@ -86,7 +86,6 @@ config.keys = {
 }
 wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
   return pane.current_working_dir
-  -- return zoomed .. tab.active_pane.current_working_dir
 end
 )
 
