@@ -85,21 +85,21 @@ config.keys = {
     },
 }
 
-wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
-  local zoomed = ''
-  if tab.active_pane.is_zoomed then
-    zoomed = '[Z] '
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local pane = tab.active_pane
+  local cwd = pane. current_working_dir
+  local color = "navy"
+  if tab.is_active then
+    color = "blue"
   end
-
-  local index = ''
-  if #tabs > 1 then
-    index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
-  end
-
-  return zoomed .. index .. tab.active_pane.title
+  return {
+    {Background={Color=color}},
+    {Text=" " .. cwd .. " "},
+  }
 end)
 
--- Zenmode
+return {
+}-- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
     if name == "ZEN_MODE" then
