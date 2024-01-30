@@ -86,13 +86,14 @@ config.keys = {
 }
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local pane = tab.active_pane
-  local cwd = pane. current_working_dir
-  return {
-    {Background={Color=color}},
-    {Text=" " .. cwd .. " "},
-  }
-end)
+    local pane = tab.active_pane
+    local cwd = pane.current_working_dir
+    return {
+        { Background = { Color = color } },
+        { Text = " " .. cwd .. " " },
+    }
+end
+)
 
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
