@@ -92,15 +92,17 @@ local function get_current_working_dir(tab)
     return current_dir == HOME_DIR and "." or string.gsub(current_dir, "(.*[/\\])(.*)", "%2")
 end
 
-wezterm.on('format-window-title', function(tab, pane, tabs, panes)
-    local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(pane))
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 
 
-    return {
-        { Text = title },
-    }
+	local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
+
+
+	return {
+		{ Text = title },
+	}
 end)
-
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
