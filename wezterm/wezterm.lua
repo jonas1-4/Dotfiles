@@ -99,7 +99,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes )
 
 
 	return {
-		{ title },
+		 title ,
 	}
 end)
 
