@@ -85,7 +85,7 @@ config.keys = {
     },
 }
 
--- Zenmod
+-- Zenmod 
 local function get_current_working_dir(tab)
   local current_dir = tab.active_pane.current_working_dir or ''
   local HOME_DIR = string.format('file://%s', os.getenv('HOME'))
