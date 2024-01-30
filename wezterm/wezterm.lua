@@ -85,7 +85,7 @@ config.keys = {
     },
 }
 
-local function get_current_working_dir(tab)
+local function get_current_working_dir(pane)
     local current_dir = pane.current_working_dir
     local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
 
