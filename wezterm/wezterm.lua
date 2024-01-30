@@ -86,8 +86,12 @@ config.keys = {
 }
 
 wezterm.on('format-window-title', function(tab, pane, tabs, panes)
-    return pane.current_working_dir
-end
+enlocal title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
+
+
+	return {
+		{ Text = title },
+	}d
 )
 
 -- Zenmode
