@@ -97,7 +97,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config )
 
 	local title =  get_current_working_dir(tab)
 
-	return title == nil ? "hallo"
+	return title == nil ? "hallo" : title
 end)
 
 -- Zenmode
