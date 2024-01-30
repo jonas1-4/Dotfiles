@@ -100,7 +100,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, hover, max_width)
 
 
 	return {
-		{ Text = title },
+		{ "haha" },
 	}
 end)
 -- Zenmode
