@@ -91,7 +91,7 @@ enlocal title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(t
 
 	return {
 		{ Text = title },
-	}d
+	}
 )
 
 -- Zenmode
