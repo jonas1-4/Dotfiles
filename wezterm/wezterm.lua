@@ -86,7 +86,7 @@ config.keys = {
 }
 
 wezterm.on('format-window-title', function(tab, pane, tabs, panes)
-local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
+    local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
 
 
     return {
