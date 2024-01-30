@@ -95,7 +95,7 @@ end
 
 wezterm.on('format-window-title', function(tab, pane, tabs, panes, config )
 
-    return get_current_working_dir(tab)
+    return get_current_working_dir(pane)
 end)
 
 -- Zenmode
