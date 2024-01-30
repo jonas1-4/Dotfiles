@@ -92,28 +92,15 @@ local function get_current_working_dir(tab)
     return current_dir == HOME_DIR and "." or string.gsub(current_dir, "(.*[/\\])(.*)", "%2")
 end
 
---
--- wezterm.on('format-window-title', function(tab, pane, tabs, panes, config )
---
--- 	local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
---
---
--- 	return "haha"
--- end)
-wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
-  local zoomed = ''
-  if tab.active_pane.is_zoomed then
-    zoomed = '[Z] '
-  end
 
-  local index = ''
-  if #tabs > 1 then
-    index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
-  end
+wezterm.on('format-window-title', function(tab, pane, tabs, panes, config )
 
 	local title = string.format(" %s  %s ~ %s  ", "❯", get_current_working_dir(tab))
-  return zoomed .. index  
+
+
+	return "haha"
 end)
+
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
