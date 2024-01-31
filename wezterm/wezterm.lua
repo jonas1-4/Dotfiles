@@ -11,7 +11,7 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font 'Fira Code'
-config.font = wezterm.font 'Fira Code'
+config.font_size = wezterm.font 'Fira Code'
 config.color_scheme = 'Gruvbox Dark (Gogh)'
 config.colors = {
     tab_bar = {
