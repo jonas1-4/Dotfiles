@@ -38,6 +38,10 @@ nvim_lsp.kotlin_language_server.setup {
     on_attach = on_attach,
 }
 
+nvim_lsp.tsserver.setup {
+
+}
+
 -- Autocompletion
 require('compe').setup {
     enabled = true,
