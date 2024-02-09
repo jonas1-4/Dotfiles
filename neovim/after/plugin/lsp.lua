@@ -39,7 +39,14 @@ nvim_lsp.kotlin_language_server.setup {
 }
 
 nvim_lsp.tsserver.setup {
-
+    init_options = { 
+    preferences = { 
+      -- other preferences... 
+      importModuleSpecifierPreference = 'relative', 
+      importModuleSpecifierEnding = 'minimal', 
+    },  
+  },
+  on_attach = on_attach,
 }
 
 -- Autocompletion
