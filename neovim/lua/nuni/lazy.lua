@@ -125,6 +125,10 @@ require("lazy").setup({
                 'python',
                 -- add other required languages here
             }
+        },},
+        {
+
+            "FabijanZulj/blame.nvim"
         },
         -- Lua
         {
