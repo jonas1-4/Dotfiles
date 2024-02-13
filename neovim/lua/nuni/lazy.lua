@@ -126,6 +126,10 @@ require("lazy").setup({
                 -- add other required languages here
             }
         },
+        {
+
+  "FabijanZulj/blame.nvim"
+        },
         -- Lua
         {
             "folke/zen-mode.nvim",
