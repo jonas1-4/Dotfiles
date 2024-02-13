@@ -125,7 +125,8 @@ require("lazy").setup({
                 'python',
                 -- add other required languages here
             }
-        },},
+        },
+    },
         -- Lua
         {
             "folke/zen-mode.nvim",
