@@ -139,5 +139,5 @@ require("lazy").setup({
         }
     },
     { 'FabijanZulj/blame.nvim' },
-    { 'https://tpope.io/vim/fugitive.git' },
+    { 'https://tpope.io/vim/fugitive.git' }
 )
