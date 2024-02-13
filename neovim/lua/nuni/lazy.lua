@@ -126,7 +126,9 @@ require("lazy").setup({
                 -- add other required languages here
             }
         },
-        {}
+        {
+
+        }
         -- Lua
         {
             "folke/zen-mode.nvim",
@@ -140,4 +142,5 @@ require("lazy").setup({
     },
     { 'https://tpope.io/vim/fugitive.git' },
     { 'FabijanZulj/blame.nvim' },
+})
 })
