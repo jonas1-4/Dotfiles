@@ -128,6 +128,7 @@ require("lazy").setup({
         },
         {
 
+  "FabijanZulj/blame.nvim"
         }
         -- Lua
         {
