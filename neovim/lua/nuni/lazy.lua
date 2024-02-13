@@ -128,8 +128,8 @@ require("lazy").setup({
         },
         {
 
-  "FabijanZulj/blame.nvim"
-        }
+            "FabijanZulj/blame.nvim"
+        },
         -- Lua
         {
             "folke/zen-mode.nvim",
