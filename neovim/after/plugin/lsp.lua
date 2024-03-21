@@ -119,12 +119,13 @@ vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,
 -- Format the current file
 vim.keymap.set('n', '<leader>cf', function()
     if vim.bo.filetype == 'ts' then
-    vim.lsp.buf.format({
-        async = true,
-        callback = function()
-            vim.cmd('EslintFixAll')
-        end
-    })    else
+        vim.lsp.buf.format({
+            async = true,
+            callback = function()
+                vim.cmd('EslintFixAll')
+            end
+        })
+    else
         vim.lsp.buf.format()
     end
 end, { noremap = true, silent = true, desc = 'Format File' })
