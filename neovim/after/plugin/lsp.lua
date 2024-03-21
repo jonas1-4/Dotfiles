@@ -121,9 +121,9 @@ vim.keymap.set('n', '<leader>cf', function()
     -- if vim.bo.filetype == 'ts' then
         vim.lsp.buf.format()
         vim.cmd('EslintFixAll')
-    else
-        vim.lsp.buf.format()
-    end
+    -- else
+    --     vim.lsp.buf.format()
+    -- end
 end, { noremap = true, silent = true, desc = 'Format File' })
 
 -- Autopairs
