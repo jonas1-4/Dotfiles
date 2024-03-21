@@ -123,6 +123,7 @@ vim.keymap.set('n', '<leader>cf', function()
         vim.cmd('EslintFixAll')
     -- else
     --     vim.lsp.buf.format()
+    -- end
 end, { noremap = true, silent = true, desc = 'Format File' })
 
 -- Autopairs
