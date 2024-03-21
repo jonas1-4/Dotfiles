@@ -118,13 +118,12 @@ vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,
 
 -- Format the current file
 vim.keymap.set('n', '<leader>cf', function()
-        vim.lsp.buf.format({
-            async = true,
-            callback = function()
-                vim.cmd('EslintFixAll')
-            end
-        })
-    end
+    vim.lsp.buf.format({
+        async = true,
+        callback = function()
+            vim.cmd('EslintFixAll')
+        end
+    })
 end, { noremap = true, silent = true, desc = 'Format File' })
 
 -- Autopairs
