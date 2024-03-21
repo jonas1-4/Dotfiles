@@ -120,9 +120,6 @@ vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,
 vim.keymap.set('n', '<leader>cf', function()
         vim.lsp.buf.format()
         vim.cmd('EslintFixAll')
-    else
-        vim.lsp.buf.format()
-    end
 end, { noremap = true, silent = true, desc = 'Format File' })
 
 -- Autopairs
