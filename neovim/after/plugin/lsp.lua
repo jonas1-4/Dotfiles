@@ -121,7 +121,7 @@ vim.keymap.set('n', '<leader>cf', function()
     vim.lsp.buf.format({
         async = true,
         callback = function()
-            echo('erfolg')
+            print('erfolg')
             vim.cmd('EslintFixAll')
         end
     })
