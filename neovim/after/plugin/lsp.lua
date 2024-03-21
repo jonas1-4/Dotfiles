@@ -118,10 +118,14 @@ vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,
 
 -- Format the current file
 vim.keymap.set('n', '<leader>cf', function()
-  vim.lsp.buf.format()
-    vim.defer_fn(function()
-        vim.cmd('EslintFixAll')
-    end, 500) -- Warte 500 Millisekundenend, { noremap = true, silent = true, desc = 'Format File' })
+    vim.lsp.buf.format({
+        async = true,
+        callback = function()
+            print('erfolg')
+            vim.cmd('EslintFixAll')
+        end
+    })
+end, { noremap = true, silent = true, desc = 'Format File' })
 
 -- Autopairs
 require('nvim-autopairs').setup()
