@@ -119,9 +119,11 @@ vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,
 -- Format the current file
 vim.keymap.set('n', '<leader>cf', function()
     vim.lsp.buf.format()
-    vim.defer_fn(function()
-        vim.cmd('EslintFixAll')
-    end, 500) -- Warte 500 Millisekunden
+    if vim.bo.filetype == 'ts' then
+        vim.defer_fn(function()
+            vim.cmd('EslintFixAll')
+        end, 500) -- Warte 500 Millisekunden
+    end
 end, { noremap = true, silent = true, desc = 'Format File' })
 
 -- Autopairs
