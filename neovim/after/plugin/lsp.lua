@@ -21,7 +21,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Use a loop to conveniently setup multiple servers
-local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'angularls', }
+local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'angularls' }
 -- 'dartls'
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup { on_attach = on_attach }
@@ -34,9 +34,7 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-nvim_lsp.kotlin_language_server.setup {
-    on_attach = on_attach,
-}
+nvim_lsp.kotlin_language_server.setup{}
 
 nvim_lsp.tsserver.setup {
     init_options = {
