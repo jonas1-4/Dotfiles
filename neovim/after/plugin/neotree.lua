@@ -52,4 +52,4 @@ require("neo-tree").setup({
 })
 
 vim.keymap.set("n", "<leader>fp", ":Neotree ~/.config/nvim/ <CR>")
-vim.keymap.set("n", "<leader>op", ":NeoTreeShowToggle")
+vim.keymap.set("n", "<leader>op", ":Neotree")
