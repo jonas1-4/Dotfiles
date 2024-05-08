@@ -74,6 +74,16 @@ require("lazy").setup({
         { 'hrsh7th/nvim-compe' },
         { 'andymass/vim-matchup',      opts = function() vim.g.matchup_matchparen_offscreen = { method = 'popup' } end },
         { 'Dhanus3133/LeetBuddy.nvim', dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' } },
+         {
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-tree.lua",
+    },
+    config = function()
+      require("lsp-file-operations").setup()
+    end,
+  },
 
 
         -- folke/trouble.nvim config
