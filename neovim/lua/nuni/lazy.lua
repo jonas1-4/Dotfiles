@@ -30,7 +30,7 @@ require("lazy").setup({
             config = function()
                 require("blame").setup()
             end
-        }
+        },
         -- NeoTree related plugins
         {
             'nvim-neo-tree/neo-tree.nvim',
