@@ -25,12 +25,12 @@ require("lazy").setup({
 
         -- Core plugins
         { 'zbirenbaum/copilot.lua' },
-{
-  "FabijanZulj/blame.nvim",
-  config = function()
-    require("blame").setup()
-  end
-}
+        {
+            "FabijanZulj/blame.nvim",
+            config = function()
+                require("blame").setup()
+            end
+        }
         -- NeoTree related plugins
         {
             'nvim-neo-tree/neo-tree.nvim',
