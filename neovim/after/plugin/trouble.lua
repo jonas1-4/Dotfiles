@@ -1,5 +1,5 @@
 -- Lua
-vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle focus=true<cr>",
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle focus=true<cr> j",
   {silent = true, noremap = true}
 )
 -- vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
