@@ -97,7 +97,7 @@ require("lazy").setup({
             opts = {
                 use_diagnostic_signs = true,
                 keys = {
-                    ["<CR>"] =
+                    ["<cr>"] =
                     "jump_close",
                     j = "next",
                     k = "prev",
