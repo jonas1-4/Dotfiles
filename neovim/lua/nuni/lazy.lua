@@ -100,7 +100,7 @@ require("lazy").setup({
                     ["<CR>"] =
                     "jump_close",
                     j = "next",
-                    j = "next",
+                    k = "prev",
                 },
             },
         },
