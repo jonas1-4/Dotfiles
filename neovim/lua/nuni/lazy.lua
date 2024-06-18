@@ -99,7 +99,8 @@ require("lazy").setup({
                 keys = {
                     ["<CR>"] =
                     "jump_close",
-                    [""]
+                    j = "next",
+                    j = "next",
                 },
             },
         },
