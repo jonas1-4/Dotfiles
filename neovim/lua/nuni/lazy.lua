@@ -94,10 +94,13 @@ require("lazy").setup({
         {
             'folke/trouble.nvim',
             config = [[require('trouble').setup{}]],
-            opts = { use_diagnostic_signs = true, keys = {
-                ["C-R"] = 
-     = "jump_close",
-            }, },
+            opts = {
+                use_diagnostic_signs = true,
+                keys = {
+                    ["C-R"] =
+                    "jump_close",
+                },
+            },
         },
 
         -- akinsho/flutter-tools.nvim config
