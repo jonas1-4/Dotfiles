@@ -76,6 +76,8 @@ require("lazy").setup({
         { 'kabouzeid/nvim-lspinstall' },
         { 'windwp/nvim-autopairs' },
         { 'hrsh7th/nvim-compe' },
+        { 'mfussenegger/nvim-dap' },
+        { 'mfussenegger/nvim-dap-ui',    dependencies = 'mfussenegger/nvim-dap', "nvim-neotest/nvim-nio"}  ,
         { 'andymass/vim-matchup',      opts = function() vim.g.matchup_matchparen_offscreen = { method = 'popup' } end },
         { 'Dhanus3133/LeetBuddy.nvim', dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' } },
         {

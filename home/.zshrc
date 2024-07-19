@@ -11,6 +11,7 @@ alias ls="lsd"
 alias cd..="cd ../"
 export ANDROID_HOME=/Users/jonasackermann/Library/Android/sdk/
 
+HISTSIZE=SA
 eval "$(zoxide init zsh)"
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
