@@ -22,7 +22,11 @@ require("lazy").setup({
             end,
             priority = 1000,
         },
-
+        { 'norcalli/nvim-colorizer.lua',
+            config = function()
+                require("colorizer").setup()
+	    end
+        },
         -- Core plugins
         { 'zbirenbaum/copilot.lua' },
         {
