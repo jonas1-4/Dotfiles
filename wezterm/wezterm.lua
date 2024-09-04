@@ -11,6 +11,7 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font 'Fira Code'
+config.font_size = 20
 config.color_scheme = 'Gruvbox Dark (Gogh)'
 config.colors = {
     tab_bar = {
@@ -84,6 +85,21 @@ config.keys = {
         action = wezterm.action.ActivateTabRelative(1),
     },
 }
+
+local function get_current_working_dir(tab)
+    local current_dir = tab.active_pane.current_working_dir.path
+    local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
+
+    return current_dir == HOME_DIR and "." or string.gsub(current_dir, "(.*[/\\])(.*)", "%2")
+end
+
+
+wezterm.on('format-window-title', function(tab, pane, tabs, panes, config )
+
+	local title =  get_current_working_dir(tab)
+
+	return title
+end)
 
 -- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)

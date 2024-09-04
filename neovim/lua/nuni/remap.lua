@@ -3,6 +3,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>fs", vim.cmd.write)
 vim.keymap.set("n", "<leader>bd", ":bd <CR>")
 vim.keymap.set("n", "<leader>bj", ":bn <CR>")
+vim.keymap.set("n", "cp", ":let @\" = expand(\"%\")<CR>")
 vim.keymap.set("n", "<leader>bk", ":bp <CR>")
 vim.keymap.set("v", "p", '"_dP')
 

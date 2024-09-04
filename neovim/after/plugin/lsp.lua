@@ -5,12 +5,12 @@
 local nvim_lsp = require('lspconfig')
 
 nvim_lsp.eslint.setup({
-    on_attach = function(client, bufnr)
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "EslintFixAll",
-        })
-    end,
+    -- on_attach = function(client, bufnr)
+    --     vim.api.nvim_create_autocmd("BufWritePre", {
+    --         buffer = bufnr,
+    --         command = "EslintFixAll",
+    --     })
+    -- end,
 })
 
 nvim_lsp.gdscript.setup({
@@ -39,7 +39,16 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-nvim_lsp.kotlin_language_server.setup {
+nvim_lsp.kotlin_language_server.setup{}
+
+nvim_lsp.tsserver.setup {
+    init_options = {
+        preferences = {
+            -- other preferences...
+            importModuleSpecifierPreference = 'relative',
+            importModuleSpecifierEnding = 'minimal',
+        },
+    },
     on_attach = on_attach,
 }
 -- Autocompletion
@@ -111,11 +120,11 @@ vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,
 
 -- Format the current file
 vim.keymap.set('n', '<leader>cf', function()
-    if vim.bo.filetype == 'dart' then
-        -- vim.fn['dart#Format']()
-        vim.lsp.buf.format()
-    else
-        vim.lsp.buf.format()
+    vim.lsp.buf.format()
+    if vim.bo.filetype == 'ts' then
+        vim.defer_fn(function()
+            vim.cmd('EslintFixAll')
+        end, 500) -- Warte 500 Millisekunden
     end
 end, { noremap = true, silent = true, desc = 'Format File' })
 
