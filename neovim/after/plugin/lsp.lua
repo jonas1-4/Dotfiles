@@ -13,6 +13,11 @@ nvim_lsp.eslint.setup({
     end,
 })
 
+nvim_lsp.gdscript.setup({
+    name = "godot",
+    cmd = vim.lsp.rpc.connect("127.0.0.1", "6005"),
+})
+
 local on_attach = function(client, bufnr)
     -- Navigate to the definition of the symbol under the cursor
     if client.name == 'tsserver' then
@@ -21,7 +26,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Use a loop to conveniently setup multiple servers
-local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'tsserver', 'angularls',  }
+local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'tsserver', 'angularls', 'clangd' }
 -- 'dartls'
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup { on_attach = on_attach }
@@ -37,7 +42,6 @@ require('nvim-treesitter.configs').setup {
 nvim_lsp.kotlin_language_server.setup {
     on_attach = on_attach,
 }
-
 -- Autocompletion
 require('compe').setup {
     enabled = true,
