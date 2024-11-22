@@ -4,27 +4,28 @@
 --
 local nvim_lsp = require('lspconfig')
 
-nvim_lsp.eslint.setup({
-    -- on_attach = function(client, bufnr)
-    --     vim.api.nvim_create_autocmd("BufWritePre", {
-    --         buffer = bufnr,
-    --         command = "EslintFixAll",
-    --     })
-    -- end,
-})
+-- -- Autocompletion
+local lsp_defaults = nvim_lsp.util.default_config
+lsp_defaults.capabilities = vim.tbl_deep_extend(
+  'force',
+  lsp_defaults.capabilities,
+  require('cmp_nvim_lsp').default_capabilities()
+)
 
-local on_attach = function(client, bufnr)
+local on_attach = function(client, _)
     -- Navigate to the definition of the symbol under the cursor
-    if client.name == 'tsserver' then
+    if client.name == 'ts_ls' then
         client.resolved_capabilities.document_formatting = false
     end
 end
 
 -- Use a loop to conveniently setup multiple servers
-local servers = { 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'angularls' }
+local servers = {'kotlin_language_server', 'eslint', 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'angularls', 'rust_analyzer'}
+
+
 -- 'dartls'
 for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup { on_attach = on_attach }
+    nvim_lsp[lsp].setup { on_attach = on_attach , capabilities = capabilities}
 end
 
 -- Treesitter for better syntax highlighting
@@ -34,9 +35,7 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-nvim_lsp.kotlin_language_server.setup{}
-
-nvim_lsp.tsserver.setup {
+nvim_lsp.ts_ls.setup {
     init_options = {
         preferences = {
             -- other preferences...
@@ -47,21 +46,6 @@ nvim_lsp.tsserver.setup {
     on_attach = on_attach,
 }
 
--- Autocompletion
-require('compe').setup {
-    enabled = true,
-    source = {
-        path = true,
-        buffer = true,
-        nvim_lsp = true,
-        nvim_lua = true,
-        treesitter = true,
-    }
-}
-
--- Use Tab for autocompletion
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { noremap = true, expr = true })
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', { noremap = true, expr = true })
 
 -- Move to the previous error/warning
 vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,

@@ -5,7 +5,8 @@ require("lazy").setup({
             opts = {
             }
         },
-        -- morhetz/gruvbox config
+        { 'nvim-lua/plenary.nvim' },
+        { 'nvim-pack/nvim-spectre' }, -- morhetz/gruvbox config
         {
             'ellisonleao/gruvbox.nvim',
             name = 'gruvbox',
@@ -22,10 +23,11 @@ require("lazy").setup({
             end,
             priority = 1000,
         },
-        { 'norcalli/nvim-colorizer.lua',
+        {
+            'norcalli/nvim-colorizer.lua',
             config = function()
                 require("colorizer").setup()
-	    end
+            end
         },
         -- Core plugins
         { 'zbirenbaum/copilot.lua' },
@@ -70,20 +72,29 @@ require("lazy").setup({
             end,
         },
 
+        -- snippets + autocomplete
+        { 'L3MON4D3/LuaSnip' },
+        { 'hrsh7th/nvim-cmp' },
+        { 'hrsh7th/cmp-nvim-lsp' },
+        { "saadparwaiz1/cmp_luasnip" },
+        { "rafamadriz/friendly-snippets" },
+
+        -- command completion
+        { 'smolck/command-completion.nvim' },
+
         -- Other plugins
         { 'MunifTanjim/prettier.nvim' },
         { 'Pocco81/auto-save.nvim' },
         { 'theprimeagen/harpoon' },
-        { 'TimUntersberger/neogit',    dependencies = 'nvim-lua/plenary.nvim' },
+        { 'TimUntersberger/neogit',          dependencies = 'nvim-lua/plenary.nvim' },
         { 'neovim/nvim-lspconfig' },
         { 'glepnir/lspsaga.nvim' },
         { 'kabouzeid/nvim-lspinstall' },
         { 'windwp/nvim-autopairs' },
-        { 'hrsh7th/nvim-compe' },
         { 'mfussenegger/nvim-dap' },
-        { 'mfussenegger/nvim-dap-ui',    dependencies = 'mfussenegger/nvim-dap', "nvim-neotest/nvim-nio"}  ,
-        { 'andymass/vim-matchup',      opts = function() vim.g.matchup_matchparen_offscreen = { method = 'popup' } end },
-        { 'Dhanus3133/LeetBuddy.nvim', dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' } },
+        { 'mfussenegger/nvim-dap-ui',        dependencies = 'mfussenegger/nvim-dap',                                         "nvim-neotest/nvim-nio" },
+        { 'andymass/vim-matchup',            opts = function() vim.g.matchup_matchparen_offscreen = { method = 'popup' } end },
+        { 'Dhanus3133/LeetBuddy.nvim',       dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' } },
         {
             "antosha417/nvim-lsp-file-operations",
             dependencies = {
@@ -110,7 +121,15 @@ require("lazy").setup({
                 },
             },
         },
-
+        {
+            'MeanderingProgrammer/render-markdown.nvim',
+            dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+            -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+            -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+            ---@module 'render-markdown'
+            ---@type render.md.UserConfig
+            opts = {},
+        },
         -- akinsho/flutter-tools.nvim config
         {
             {
@@ -132,10 +151,10 @@ require("lazy").setup({
         {
             'folke/which-key.nvim',
             config = [[
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-      require('which-key').setup{}
-    ]]
+                vim.o.timeout = true
+                vim.o.timeoutlen = 300
+                require('which-key').setup{}
+            ]]
         },
 
         -- numToStr/Comment.nvim config

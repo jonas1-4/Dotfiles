@@ -11,6 +11,7 @@ alias cd..="cd ../"
 export ANDROID_HOME=~/Library/Android/sdk/
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH=~/.cargo/bin:$PATH
 export PATH=~/fvm/default/bin:$PATH
 HISTFILE=~/.zsh_history
