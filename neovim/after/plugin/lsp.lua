@@ -12,7 +12,12 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
-local on_attach = function(client, _)
+nvim_lsp.gdscript.setup({
+    name = "godot",
+    cmd = vim.lsp.rpc.connect("127.0.0.1", "6005"),
+})
+
+local on_attach = function(client, bufnr)
     -- Navigate to the definition of the symbol under the cursor
     if client.name == 'ts_ls' then
         client.resolved_capabilities.document_formatting = false
@@ -45,8 +50,6 @@ nvim_lsp.ts_ls.setup {
     },
     on_attach = on_attach,
 }
-
-
 -- Move to the previous error/warning
 vim.keymap.set('n', '<leader>c[', function() vim.lsp.diagnostic.goto_prev() end,
     { noremap = true, silent = true, desc = 'Prev Diagnostic' })

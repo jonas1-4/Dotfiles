@@ -12,6 +12,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.list = true
 vim.opt.listchars='tab:>-'
 
+vim.o.autoread = true
 -- vim.o.vimDir ='$HOME/.vim';
 
 
