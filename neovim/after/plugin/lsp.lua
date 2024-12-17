@@ -14,7 +14,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 
 nvim_lsp.gdscript.setup({
     name = "godot",
-    cmd = vim.lsp.rpc.connect("127.0.0.1", "6005"),
+    cmd = vim.lsp.rpc.connect("127.0.0.1", "6006"),
 })
 
 local on_attach = function(client, bufnr)
@@ -25,7 +25,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Use a loop to conveniently setup multiple servers
-local servers = {'kotlin_language_server', 'eslint', 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'lua_ls', 'angularls', 'rust_analyzer'}
+local servers = {'kotlin_language_server', 'eslint', 'html', 'cssls', 'bashls', 'jsonls', 'intelephense', 'angularls', 'rust_analyzer'}
 
 
 -- 'dartls'
@@ -39,6 +39,29 @@ require('nvim-treesitter.configs').setup {
         enable = true,
     },
 }
+nvim_lsp["lua_ls"].setup({
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = "LuaJIT",
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { "vim" },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            -- Do not send telemetry data containing a randomized but unique identifier
+            telemetry = {
+                enable = false,
+            },
+        },
+    },
+})
 
 nvim_lsp.ts_ls.setup {
     init_options = {

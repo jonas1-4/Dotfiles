@@ -94,14 +94,12 @@ local function get_current_working_dir(tab)
 end
 
 
-wezterm.on('format-window-title', function(tab, pane, tabs, panes, config )
+wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
+    local title = get_current_working_dir(tab)
 
-	local title =  get_current_working_dir(tab)
-
-	return title
+    return title
 end)
 
--- Zenmode
 wezterm.on('user-var-changed', function(window, pane, name, value)
     local overrides = window:get_config_overrides() or {}
     if name == "ZEN_MODE" then

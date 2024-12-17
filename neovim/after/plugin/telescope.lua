@@ -4,7 +4,7 @@ require("telescope").setup(
     {
         extensions = {
             file_browser = { layout_strategy = "horizontal", sorting_strategy = "ascending" },
-            heading = { treesitter = true },
+            heading = { treesitter = true,},
             ["ui-select"] = { require("telescope.themes").get_dropdown({}) }
         },
         defaults = {

@@ -9,11 +9,9 @@ alias devChrome="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Goog
 alias ls="lsd"
 alias cd..="cd ../"
 export ANDROID_HOME=~/Library/Android/sdk/
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-export PATH=$ANDROID_HOME/tools:$PATH
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin":"/Users/jonasackermann/.emacs.d/bin":"$ANDROID_HOME/tools":"$ANDROID_HOME/platform-tools"
 export PATH=~/.cargo/bin:$PATH
-export PATH=~/fvm/default/bin:$PATH
+# export PATH=~/fvm/default/bin:$PATH
 HISTFILE=~/.zsh_history
 eval "$(zoxide init zsh)"
 
@@ -30,3 +28,4 @@ source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ -f /Users/jonasackermann/.dart-cli-completion/zsh-config.zsh ]] && . /Users/jonasackermann/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
