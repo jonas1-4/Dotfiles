@@ -11,7 +11,7 @@ alias cd..="cd ../"
 export ANDROID_HOME=~/Library/Android/sdk/
 export PATH="$PATH":"$HOME/.pub-cache/bin":"/Users/jonasackermann/.emacs.d/bin":"$ANDROID_HOME/tools":"$ANDROID_HOME/platform-tools"
 export PATH=~/.cargo/bin:$PATH
-# export PATH=~/fvm/default/bin:$PATH
+export PATH=~/fvm/default/bin:$PATH
 HISTFILE=~/.zsh_history
 eval "$(zoxide init zsh)"
 

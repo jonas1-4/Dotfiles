@@ -8,6 +8,13 @@ require("lazy").setup({
     { 'nvim-lua/plenary.nvim' },
     { 'nvim-pack/nvim-spectre' },
     {
+        "nomnivore/ollama.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+    { 'sindrets/diffview.nvim' },
+    {
         'ellisonleao/gruvbox.nvim',
         name = 'gruvbox',
         config = function(plugin)
@@ -213,6 +220,6 @@ require("lazy").setup({
             require("zen-mode").setup({
             })
         end,
-    }
+    },
 }
 )
