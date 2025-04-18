@@ -8,8 +8,10 @@ source ~/.privateZshrc
 alias devChrome="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir='/tmp/chrome_dev_test' --disable-web-security"
 alias ls="lsd"
 alias cd..="cd ../"
+
+export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$(brew --prefix)/opt/gnu-getopt/bin:$(brew --prefix)/opt/make/libexec/gnubin:$(brew --prefix)/opt/util-linux/bin:${PATH}"
 export ANDROID_HOME=~/Library/Android/sdk/
-export PATH="$PATH":"$HOME/.pub-cache/bin":"/Users/jonasackermann/.emacs.d/bin":"$ANDROID_HOME/tools":"$ANDROID_HOME/platform-tools"
+export PATH="$PATH":"$HOME/.pub-cache/bin":"/Users/jonasackermann/.emacs.d/bin":"$ANDROID_HOME/tools":"$ANDROID_HOME/platform-tools":"/opt/homebrew/Cellar/make/4.4.1/bin/make"
 export PATH=~/.cargo/bin:$PATH
 export PATH=~/fvm/default/bin:$PATH
 HISTFILE=~/.zsh_history
@@ -29,3 +31,5 @@ source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 ## [/Completion]
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-getopt/bin:$PATH"
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"

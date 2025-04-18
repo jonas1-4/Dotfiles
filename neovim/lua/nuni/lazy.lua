@@ -180,13 +180,6 @@ require("lazy").setup({
                 require('which-key').setup{}
             ]]
     },
-    {
-        dir = "~/dev/lua/flutter-bloc-nvim", -- Your path
-        name = "flutter-bloc-nvim",
-        config = function()
-            require('flutter-bloc-nvim')
-        end
-    },
 
     -- numToStr/Comment.nvim config
     {
